@@ -131,7 +131,3 @@ Every doc Acta writes follows the contract in [`acta/doc-catalog.md`](acta/doc-c
 ## License
 
 [MIT](LICENSE) © erenisci
-
-<div align="center">
-<sub>Acta — Latin <em>acta</em>: the official record of what was done. Your project's record, kept for you.</sub>
-</div>
