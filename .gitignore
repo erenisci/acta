@@ -1,0 +1,17 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.idea/
+.vscode/
+
+# Local test output from running the skills in this repo
+/docs/
+/CLAUDE.md
+/CHANGELOG.md
+/.claude/
+*_BRIEF.md
+
+# Personal scratch (not part of the project)
+/TEMP.md

@@ -1,0 +1,21 @@
+# acta registry
+
+> Agent state for the acta doc pipeline. Owned by acta-build / acta-adopt / acta-track.
+> Regenerated on each run — safe to read, avoid hand-editing.
+
+## Profile
+- project: {{PROJECT_NAME}}
+- type: {{PROJECT_TYPE}}        <!-- e.g. web app, CLI, library, API -->
+- stack: {{STACK}}             <!-- detected or from brief; TBD if unknown -->
+- stage: {{STAGE}}            <!-- greenfield | early | active | mature -->
+- brief: {{BRIEF_STATUS}}      <!-- none | present | archived -->
+- depth: {{DEPTH}}            <!-- core | standard | full -->
+
+## Selected disciplines
+{{DISCIPLINES}}                 <!-- e.g. product, project, code, ops -->
+
+## Document registry
+<!-- one row per generated doc; status: active | tbd | external(pre-existing, untouched) -->
+| id | path | status | updated |
+|----|------|--------|---------|
+{{ROWS}}

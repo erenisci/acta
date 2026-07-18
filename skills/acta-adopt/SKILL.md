@@ -1,0 +1,61 @@
+---
+name: acta-adopt
+description: Step 4 of the acta solo-engineering doc pipeline, for an EXISTING codebase that has little or no documentation. Scans the code (stack, structure, routes, DB, deps), then generates ONLY the missing docs — reverse-engineered from the code — and wires up the CLAUDE.md brain. It NEVER overwrites any doc that already exists; it lists those as untouched. Trigger on /acta-adopt, "document this codebase", "backfill docs", "add docs to existing project".
+---
+
+# acta-adopt
+
+The **backfill**. Point it at a real project that's missing docs and it reverse-engineers a right-sized doc set
+from the code, then builds the brain — **without touching anything that already exists**.
+
+Shared: `~/.claude/acta/` (`doc-catalog.md`, `disciplines.md`, `templates/`). Same catalog/templates as
+`acta-build`, so adopted docs are consistent with built ones. The difference: **source is the code, and the
+overwrite policy is always SKIP.**
+
+## Language
+English only.
+
+## Flow
+
+1. **Scan the codebase (read-only).** Detect:
+   - Stack: `package.json`, `pyproject.toml`/`requirements.txt`, `go.mod`, `Cargo.toml`, `pom.xml`, etc.
+   - Structure: top-level folders, entry points, module boundaries.
+   - Routes/endpoints: `app/`, `pages/`, `routes/`, controllers, OpenAPI files.
+   - Data: schemas, migrations, ORM models → for `db-design`/`erd`.
+   - Ops signals: Dockerfile, CI config (`.github/workflows`, etc.), `.env.example` → `env-vars`/`ci-cd`/`deployment`.
+   - Tests: presence/kind → `testing-strategy`.
+   Report the detected profile in 3–5 lines before doing anything else.
+
+2. **Inventory existing docs.** Check the filesystem and any `.claude/acta.md` registry for docs that already
+   exist (README, `docs/**`, CLAUDE.md, CHANGELOG, ADRs). Build two lists: **present** vs **missing**.
+
+3. **Recommend & confirm the doc set.** From the detected profile, recommend disciplines/depth (e.g. API routes
+   → `api`; migrations → `db-design`, `erd`; CI file → `ci-cd`; tests → `testing-strategy`). Confirm via
+   multi-select (default depth `standard`). Intersect with the **missing** list — you only ever generate missing docs.
+
+4. **Short product intake (optional).** Code reveals *how*, not *why*. Ask ≤4 questions to capture product intent
+   (what/for whom/goals) so `PRD`/`arch-overview` aren't hollow. Skippable → those fields become `TBD`.
+
+5. **Generate ONLY missing docs** from the code analysis, rendered via the catalog's templates. Unknown → `TBD`.
+   Document *what actually exists* — do not invent architecture the code doesn't show.
+   - Seed `docs/architecture/adr/0001-initial-architecture.md` describing the **as-is** architecture/stack (only if no ADRs exist).
+   - Paths and filenames come straight from `doc-catalog.md` exactly as listed (folders lowercase; root meta UPPERCASE, docs/ lowercase-kebab).
+
+6. **Write/refresh the brain — without clobbering.**
+   - `CLAUDE.md`: if absent, create with the index block. If present, inject the marker block; if it already has
+     other content, **append** the block once and leave existing content untouched (never rewrite the user's CLAUDE.md prose).
+   - `.claude/acta.md`: registry with a row per doc — generated docs `active`; pre-existing docs recorded with
+     status `external` so future `acta-track` knows they exist but weren't authored here.
+   - `docs/README.md`: if absent, generate it; if present, **skip** (report it).
+
+7. **Summary.** Two clear lists:
+   - **Created** (missing docs now generated).
+   - **Left untouched** (pre-existing docs — path each), explicitly: *"already present, not modified."*
+
+## Rules (the defining guarantee)
+
+- **NEVER overwrite an existing doc.** Existing → always skip + report. No merge, no prompt-to-overwrite — adopt
+  is safe-by-default on a real project.
+- Never fabricate. Reverse-engineer only what the code supports; everything else is `TBD` or an intake question.
+- Idempotent: re-running only fills newly-missing gaps; already-present docs stay untouched; brain/registry regenerate in place.
+- English only. Solo right-sizing applies. After adopt, ongoing updates are `/acta-track`'s job.

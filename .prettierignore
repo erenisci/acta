@@ -1,0 +1,4 @@
+# Acta contract & skill instructions — keep formatting stable.
+# (Wide catalog data and skill prose must not be reflowed/realigned by a formatter.)
+acta/
+skills/
