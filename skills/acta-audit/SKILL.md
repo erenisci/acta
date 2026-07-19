@@ -18,7 +18,7 @@ English only.
 ## Pre-condition
 
 Read `.claude/acta.md` (registry) and `~/.claude/acta/doc-catalog.md`. If there is no registry, this project isn't
-forged yet → suggest `/acta-build` (greenfield) or `/acta-adopt` (existing code). Don't guess a doc set without them.
+set up with Acta yet → suggest `/acta-build` (greenfield) or `/acta-adopt` (existing code). Don't guess a doc set without them.
 
 ## Checks
 

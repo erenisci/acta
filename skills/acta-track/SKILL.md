@@ -17,7 +17,7 @@ English only.
 
 ## Pre-condition
 
-Read `.claude/acta.md` (the registry). If absent, this project isn't actad yet → suggest `/acta-build`
+Read `.claude/acta.md` (the registry). If absent, this project isn't set up with Acta yet → suggest `/acta-build`
 (greenfield) or `/acta-adopt` (existing code). Don't guess a doc set without the registry/catalog.
 
 ## Flow
