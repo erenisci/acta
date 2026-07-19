@@ -73,6 +73,11 @@ conversationally to reconstruct the brief's answers first.)
    - **.claude/acta.md** — render `templates/registry.md.tmpl`: profile (name/type/stack/stage/brief/depth),
      selected disciplines, and a row per generated doc (status `active` or `tbd`).
    - **docs/README.md** — render `templates/docs-README.md.tmpl`, listing every generated doc grouped by discipline.
+   - **.gitignore** — add/refresh a marker-scoped block (`# acta:gitignore:start` … `# acta:gitignore:end`) that keeps
+     **sensitive doc areas local** — a solo builder's pricing, margins, and legal briefs shouldn't leak to a public
+     repo (Claude still reads them locally). Ignore `docs/business/` and `docs/legal/` by default; list the other
+     `docs/<area>/` as **commented toggles** the user can flip; keep `docs/README.md` and `CLAUDE.md` tracked. Create
+     `.gitignore` if absent; idempotent (never duplicate the block).
 
 8. **Finish.**
    - Ask what to do with the brief: **archive** (move to `docs/_brief-archive/<PROJECT>_BRIEF.md`) or **delete** or **keep**. Default archive.

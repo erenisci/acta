@@ -34,6 +34,11 @@ Read `.claude/acta.md` (the registry). If absent, this project isn't actad yet �
    - a real architectural/tech decision → **new ADR** (per-item) + adr index.
    - notable AI-made decision → `ai-decision-log` entry.
    - scope/feature change → `prd`, `roadmap`, `feature-specs`.
+   - **skill-owned areas — flag, don't silently rewrite.** If `docs/design/` exists and styling changed → point to
+     `/acta-design-track`. If a **pricing / plan / monetization** change landed and `docs/business/` exists → point to
+     `/acta-business` (it's iterative + sensitive; don't rewrite pricing here). If a **legal-relevant** change landed
+     (cookies/analytics, a new data field, a new vendor, a new market) and `docs/legal/` exists → point to
+     `/acta-legal-track` and note it needs a lawyer re-review. Surface these as one-line pointers in the summary.
 
 3. **Apply updates by growth policy** (from the catalog):
    - **in-place** (progress, roadmap, prd, standards, api, structure, …): **edit/merge in place.** Replace stale
