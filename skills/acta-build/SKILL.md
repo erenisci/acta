@@ -1,6 +1,6 @@
 ---
 name: acta-build
-description: Step 2 of the acta solo-engineering doc pipeline. Reads a filled <PROJECT>_BRIEF.md, proposes values for "?" fields, asks only about genuine blanks (never about "-" fields), then generates the selected disciplines' documents under docs/ and writes the project "brain" — a CLAUDE.md Context Index + .claude/acta.md registry + docs/README index. Trigger on /acta-build, "build the docs", "generate project docs".
+description: Step 2 of the Acta pipeline — read the filled <PROJECT>_BRIEF.md, detect the project type, and scaffold a fitting doc set plus the CLAUDE.md "brain". Trigger on /acta-build, "build the docs", "generate project docs".
 ---
 
 # acta-build

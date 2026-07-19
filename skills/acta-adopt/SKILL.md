@@ -1,6 +1,6 @@
 ---
 name: acta-adopt
-description: Step 4 of the acta solo-engineering doc pipeline, for an EXISTING codebase that has little or no documentation. Scans the code (stack, structure, routes, DB, deps), then generates ONLY the missing docs — reverse-engineered from the code — and wires up the CLAUDE.md brain. It NEVER overwrites any doc that already exists; it lists those as untouched. Trigger on /acta-adopt, "document this codebase", "backfill docs", "add docs to existing project".
+description: Document an existing codebase with few/no docs — scan the code and generate only the missing docs (reverse-engineered); never overwrite existing ones. Trigger on /acta-adopt, "document this codebase", "backfill docs".
 ---
 
 # acta-adopt

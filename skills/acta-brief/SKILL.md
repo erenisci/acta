@@ -1,6 +1,6 @@
 ---
 name: acta-brief
-description: Step 1 of the acta solo-engineering doc pipeline. Creates a <PROJECT>_BRIEF.md intake file at the project root for the human to fill in, using a simple sign language (plain text = I know this; "?" = suggest one for me; "-" = skip/unknown). Does NOT generate any docs — that's acta-build. Trigger on /acta-brief, "start a project", "create a project brief".
+description: Step 1 of the Acta pipeline — create <PROJECT>_BRIEF.md for the human to fill (sign language: plain text, "?" = suggest, "-" = skip). Generates no docs itself. Trigger on /acta-brief, "start a project", "create a project brief".
 ---
 
 # acta-brief

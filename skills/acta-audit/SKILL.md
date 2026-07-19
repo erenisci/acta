@@ -1,6 +1,6 @@
 ---
 name: acta-audit
-description: The consistency / drift checker of the acta pipeline. Read-only by default — it verifies a project's engineering memory is still trustworthy: doc↔code drift, broken links, stale TBDs, brain/index/registry consistency, filename conventions, and doc bloat, then reports findings ranked by severity. Pass --fix to apply only safe mechanical fixes (regenerate brain/index/registry, drop broken links); it never fabricates content. Trigger on /acta-audit, "audit the docs", "check doc drift", "verify the docs".
+description: Read-only consistency/drift check of a project's Acta docs vs reality — doc↔code drift, broken links, stale TBDs, brain/index/registry, conventions; reports findings (--fix does safe mechanical fixes only, never fabricates). Trigger on /acta-audit, "audit the docs", "check doc drift".
 ---
 
 # acta-audit
@@ -39,6 +39,10 @@ Run these read-only checks and collect findings. Rank each **🔴 broken · 🟡
    catalog's paths; disciplines/packs in the registry vs what's actually on disk.
 7. **Anti-bloat** — `in-place` docs that have grown append-only (e.g. `PROGRESS.md` accumulating dated log lines
    instead of a snapshot); oversized docs that should be consolidated per their growth policy.
+8. **Design consistency** (only if `docs/design/` exists) — the code's real styling vs `design-system.md`: rogue
+   colors / spacing / fonts used in code but not in the tokens; components or variants in code missing from
+   `components.md`; a drifted styling approach; broken design-system pointers in the brain. Flag them → the fixer is
+   `/acta-design-track`.
 
 ## Output
 

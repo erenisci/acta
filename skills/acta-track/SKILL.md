@@ -1,6 +1,6 @@
 ---
 name: acta-track
-description: Step 3 of the acta solo-engineering doc pipeline. After you finish a chunk of work, run this to bring ALL relevant project docs up to the current state in one shot — you don't ask for each file. Updates PROGRESS/ROADMAP/PRD in place, appends structured CHANGELOG/decision-log entries, opens a new ADR when a decision was made, and refreshes the CLAUDE.md brain — WITHOUT letting docs grow without bound. Trigger on /acta-track, "update the docs", "sync progress", "track".
+description: Bring all relevant Acta docs up to the current state after a chunk of work — updated in place, no bloat (progress, changelog, new ADRs, brain). Trigger on /acta-track, "update the docs", "sync progress", "track".
 ---
 
 # acta-track

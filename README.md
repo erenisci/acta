@@ -134,6 +134,11 @@ flowchart LR
 | **`/acta-track`** | after finishing work   | Brings **all** relevant docs to the current state in one shot — without bloating them.             |
 | **`/acta-adopt`** | existing code, no docs | Reverse-engineers the **missing** docs from your code. **Never overwrites** existing docs.         |
 
+> **Plus, outside the linear flow:** `/acta-audit` runs anytime to verify the docs still match the code (read-only),
+> and the **design layer** — `/acta-design` · `/acta-design-prompt` · `/acta-design-track` — turns your product docs
+> into a brand + design-system and generates real design (landing, logo, deck, ads) plus Claude Design prompts, all
+> from the same source of truth.
+
 ## The brief sign language
 
 When you fill `<PROJECT>_BRIEF.md`, any field can be a single symbol instead of an answer:
@@ -197,7 +202,7 @@ Filenames follow the common standard: root meta-files (`README.md`, `CHANGELOG.m
 Acta is a growing **family** of `acta-*` skills:
 
 - ✅ `acta-brief` · `acta-build` · `acta-track` · `acta-adopt` · `acta-audit` — the documentation, memory & trust pipeline
-- 🔜 **`acta-design`** — a brand + design-system + marketing layer that reads your Acta docs and both **generates** the work (landing, logo, deck, ads) and produces **Claude Design** prompts + copy — all consistent with the product's source of truth.
+- ✅ `acta-design` · `acta-design-prompt` · `acta-design-track` — the brand / design-system / marketing layer: establish `docs/design/`, generate real design, produce scope-locked **Claude Design** prompts + copy, and keep it in sync with the code.
 - 💡 Deeper per-domain detection and code-aware doc filling.
 
 ## Contributing

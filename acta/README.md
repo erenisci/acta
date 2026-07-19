@@ -16,6 +16,9 @@ methodology to a project — and, crucially, wires every produced document into 
 | acta-track | `/acta-track` | after finishing a chunk of work | Update all relevant docs to the current state — **without bloating them**.           |
 | acta-adopt | `/acta-adopt` | existing codebase, missing docs | Generate only the **missing** docs from the code; **never overwrite** existing docs. |
 | acta-audit | `/acta-audit` | anytime | **Verify** the memory: doc↔code drift, broken links, stale TBDs, brain/index consistency. Read-only; reports findings. |
+| acta-design | `/acta-design` | brand / design | Establish `docs/design/` (brand, design-system, messaging) and **generate real design** (web / logo / deck / ads). |
+| acta-design-prompt | `/acta-design-prompt` | need a Claude Design prompt | Scope-locked, on-brand **Claude Design prompts + the real copy**, straight from the design docs. |
+| acta-design-track | `/acta-design-track` | design changed in code | Sync `docs/design/` to the code's real styling, in place (design's `acta-track`). |
 
 ## Brief sign language (used by acta-brief / acta-build)
 
@@ -55,5 +58,5 @@ In any brief field the human may put a single symbol instead of an answer:
 ## Paths
 
 - Shared resources (this folder): `~/.claude/acta/`
-- Skills: `~/.claude/skills/acta-brief`, `acta-build`, `acta-track`, `acta-adopt`, `acta-audit`
+- Skills: `~/.claude/skills/acta-brief`, `acta-build`, `acta-track`, `acta-adopt`, `acta-audit`, `acta-design`, `acta-design-prompt`, `acta-design-track`
 - Per-project state written by the skills: `<project>/.claude/acta.md` (registry) + `<project>/CLAUDE.md` (brain block).
