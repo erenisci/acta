@@ -1,6 +1,6 @@
 ---
 name: acta-design
-description: The design/brand/marketing layer of Acta — reads your product docs (and existing code) to establish docs/design/ (brand, design-system, messaging, components) and generate real design (web, logo, deck, ads) consistent with the project's source of truth. Trigger on /acta-design, "set up brand", "design system", "generate landing/logo/deck/ads".
+description: Establish docs/design/ (brand, design-system, messaging) and generate real design — web, logo, deck, ads — from the product docs. Trigger on /acta-design, "set up brand", "design system", "generate landing/logo/deck".
 ---
 
 # acta-design

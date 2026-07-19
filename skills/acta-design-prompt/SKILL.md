@@ -1,6 +1,6 @@
 ---
 name: acta-design-prompt
-description: Turn your Acta design docs into paste-ready Claude Design prompts plus the real copy to fill them — scope-locked to the actual spec (no invented fields/features), on-brand (design-system tokens), for any surface (web, logo, deck, ads, og-image). Trigger on /acta-design-prompt, "claude design prompt", "generate a design prompt".
+description: Turn the design docs into paste-ready Claude Design prompts plus the real copy — scope-locked and on-brand. Trigger on /acta-design-prompt, "claude design prompt", "generate a design prompt".
 ---
 
 # acta-design-prompt

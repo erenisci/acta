@@ -12,4 +12,4 @@ Get-ChildItem (Join-Path $src 'skills') -Directory -Filter 'acta-*' | ForEach-Ob
 Copy-Item (Join-Path $src 'acta') -Destination $claude -Recurse -Force
 Write-Host "installed shared resources: ~/.claude/acta"
 Write-Host ""
-Write-Host "Acta installed. Restart Claude Code, then run /acta-brief" -ForegroundColor Green
+Write-Host "Acta installed. Restart Claude Code, then run /acta-init" -ForegroundColor Green

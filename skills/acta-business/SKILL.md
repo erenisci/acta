@@ -1,6 +1,6 @@
 ---
 name: acta-business
-description: Your iterative business-modeling partner — reason through pricing, unit economics (LTV/CAC/margin), and best/base/worst-case projections with the real numbers, then persist the decisions in docs/business/. Not a one-shot generator. Trigger on /acta-business, "model pricing", "unit economics", "revenue projection".
+description: Iteratively model pricing, unit economics (LTV/CAC/margin) and best/base/worst projections with real numbers → docs/business/. Not a one-shot generator. Trigger on /acta-business, "model pricing", "unit economics", "revenue projection".
 ---
 
 # acta-business

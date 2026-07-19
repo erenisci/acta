@@ -1,6 +1,6 @@
 ---
 name: acta-adopt
-description: Document an existing codebase with few/no docs — scan the code and generate only the missing docs (reverse-engineered); never overwrite existing ones. Trigger on /acta-adopt, "document this codebase", "backfill docs".
+description: Existing codebase with few docs — reverse-engineer only the missing ones from the code; never overwrite. Trigger on /acta-adopt, "document this codebase", "backfill docs".
 ---
 
 # acta-adopt

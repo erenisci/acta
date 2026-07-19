@@ -1,6 +1,6 @@
 ---
 name: acta-design-track
-description: Keep the design docs in sync with the code — when styling changes (a new color, variant, spacing value, or a switched approach), update docs/design/ (design-system, components) in place, without bloat. Trigger on /acta-design-track, "sync the design", "update the design system".
+description: Sync docs/design/ when styling changes in code (a new color, variant, spacing) — in place, no bloat. Trigger on /acta-design-track, "sync the design", "update the design system".
 ---
 
 # acta-design-track

@@ -1,6 +1,6 @@
 ---
 name: acta-track
-description: Bring all relevant Acta docs up to the current state after a chunk of work — updated in place, no bloat (progress, changelog, new ADRs, brain). Trigger on /acta-track, "update the docs", "sync progress", "track".
+description: After finishing work, bring every affected doc to the current state — in place, no bloat. Trigger on /acta-track, "update the docs", "sync progress", "track".
 ---
 
 # acta-track

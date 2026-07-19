@@ -1,9 +1,9 @@
 ---
-name: acta-brief
-description: Step 1 of the Acta pipeline — create <PROJECT>_BRIEF.md for the human to fill (sign language: plain text, "?" = suggest, "-" = skip). Generates no docs itself. Trigger on /acta-brief, "start a project", "create a project brief".
+name: acta-init
+description: Start a new project — create <PROJECT>_BRIEF.md for you to fill (? = suggest, - = skip); asks the doc language. Writes no docs itself. Trigger on /acta-init, "start a project", "create a project brief".
 ---
 
-# acta-brief
+# acta-init
 
 The **entry point** for a new project. It produces one file — `<PROJECT>_BRIEF.md` — that captures the human's
 intent as a starting point. It writes nothing else. Once filled, `/acta-build` turns it into real docs + a brain.
@@ -13,7 +13,7 @@ Shared resources live at `~/.claude/acta/` (sibling of the `skills/` folder). Th
 
 ## Language — two decisions start here
 
-1. **Brief language.** If `/acta-brief` opens the conversation, or the user is writing in another language, **ask
+1. **Brief language.** If `/acta-init` opens the conversation, or the user is writing in another language, **ask
    which language the brief should be written in** — propose the language they're already using, and confirm. Default
    English. Write the brief in that language and talk to the user in it.
 2. **Documentation language.** The brief's **final question** (template section 11) asks what language the *generated

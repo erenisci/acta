@@ -35,6 +35,8 @@ code change → /acta-track → docs updated → brain updated → next session 
 - 🔄 **Always in sync** — `acta-track` keeps them current, so they never rot.
 - 🧠 **Always loaded** — the brain is read before every decision, not a file you _hope_ gets used.
 - 🎯 **Acts senior** — Claude behaves like a tech lead, not a code vending machine.
+- 💡 **Suggests the next step** — at each checkpoint it recommends the right move (sync docs, security review, legal re-review) — in the right place, never nagging.
+- 🌍 **Your language** — write the docs in English, Turkish, Japanese… you pick; Claude keeps them there.
 
 > **Not a rules file.** A hand-written rules file is a static prompt applied unevenly. Acta is a memory system
 > that grows with the code.
@@ -45,7 +47,7 @@ code change → /acta-track → docs updated → brain updated → next session 
 
 ```mermaid
 flowchart LR
-    A["/acta-brief"] --> B["you fill<br/>the brief"]
+    A["/acta-init"] --> B["you fill<br/>the brief"]
     B --> C["/acta-build"]
     C --> D["build<br/>features"]
     D --> E["/acta-track"]
@@ -56,7 +58,7 @@ flowchart LR
 
 | Skill             | When                   | What it does                                                     |
 | ----------------- | ---------------------- | ---------------------------------------------------------------- |
-| **`/acta-brief`** | project start          | Creates a short intake you fill with a simple sign language.     |
+| **`/acta-init`**  | project start          | Creates a short intake you fill with a simple sign language.     |
 | **`/acta-build`** | after the brief        | Detects the project type → fitting docs + the `CLAUDE.md` brain. |
 | **`/acta-track`** | after finishing work   | Brings **all** relevant docs to the current state — no bloat.    |
 | **`/acta-adopt`** | existing code, no docs | Backfills only the **missing** docs. **Never overwrites.**       |
@@ -80,6 +82,8 @@ solution that fits → check security & performance → define tests → update 
 - Right-size. Never add DDD/CQRS/microservices without a real need.
 - Decide, then justify — record why / alternatives / long-term impact as an ADR.
 - Unknown stays `TBD` — never fabricate. Read the relevant doc before writing.
+- Recommend the next step — after a chunk / before a commit, suggest the fitting move.
+- Write docs in this project's language; talk to me in mine.
 
 ## Project documentation index
 
@@ -170,7 +174,7 @@ Then restart Claude Code so the `/acta-*` commands register.
 
 ```
 # New project
-/acta-brief          # creates PROJECT_BRIEF.md — fill it (? = suggest, - = skip)
+/acta-init           # creates PROJECT_BRIEF.md — fill it (? = suggest, - = skip)
 /acta-build          # detects type → docs/ + CLAUDE.md brain
 # … build features …
 /acta-track          # keeps every doc current, in one command

@@ -1,6 +1,6 @@
 ---
 name: acta-build
-description: Step 2 of the Acta pipeline — read the filled <PROJECT>_BRIEF.md, detect the project type, and scaffold a fitting doc set plus the CLAUDE.md "brain". Trigger on /acta-build, "build the docs", "generate project docs".
+description: Turn the filled brief into a project-type-aware doc set plus the CLAUDE.md "brain". Trigger on /acta-build, "build the docs", "generate project docs".
 ---
 
 # acta-build
@@ -17,7 +17,7 @@ the user in the language they use. The filename convention, `acta:` markers, and
 
 Find `<PROJECT>_BRIEF.md` at the project root (any `*_BRIEF.md`). If none exists:
 ```
-No project brief found. Run /acta-brief first — it creates <PROJECT>_BRIEF.md for you to fill in.
+No project brief found. Run /acta-init first — it creates <PROJECT>_BRIEF.md for you to fill in.
 (Existing codebase with no docs? /acta-adopt reverse-engineers docs from the code instead.)
 ```
 Do not proceed without a brief. (If the user insists on going without one, run the questions in step 2/3

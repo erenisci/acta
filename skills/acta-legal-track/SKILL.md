@@ -1,6 +1,6 @@
 ---
 name: acta-legal-track
-description: Keep the legal briefs current — when a product change creates a legal obligation (you add cookies/analytics, a new data field, a new vendor/sub-processor, a new market, or payments), update docs/legal/ and raise a "get this re-reviewed by a lawyer" flag. Trigger on /acta-legal-track, "sync legal", "legal review needed".
+description: When a change adds cookies/data/a vendor/a market, update the legal briefs and flag a lawyer re-review. Trigger on /acta-legal-track, "sync legal", "legal review needed".
 ---
 
 # acta-legal-track

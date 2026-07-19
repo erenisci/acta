@@ -1,6 +1,6 @@
 ---
 name: acta-legal-brief
-description: Consolidate the separate docs/legal/ briefs into ONE self-contained document to hand to a lawyer — project identity, what it does, data inventory, data flows & cross-border transfers, applicable regimes, and the decisions counsel must make. Never legal advice. Trigger on /acta-legal-brief, "brief for the lawyer", "prepare for legal counsel".
+description: Consolidate the separate legal briefs into ONE document to hand to a lawyer — never legal advice. Trigger on /acta-legal-brief, "brief for the lawyer", "prepare for legal counsel".
 ---
 
 # acta-legal-brief

@@ -1,6 +1,6 @@
 ---
 name: acta-legal
-description: Region-aware legal groundwork — detect which regimes apply to your users (KVKK, GDPR, CCPA, PIPL, APPI…), then produce a developer risk warning plus a lawyer briefing per applicable regime in docs/legal/. Never writes binding legal text; always says get a lawyer. Trigger on /acta-legal, "legal docs", "privacy policy brief", "GDPR/KVKK".
+description: Region-aware legal briefs (KVKK/GDPR/CCPA/PIPL/APPI…) — warn you, brief a lawyer; never binding legal text, always "get a lawyer". Trigger on /acta-legal, "legal docs", "privacy policy", "GDPR/KVKK".
 ---
 
 # acta-legal

@@ -1,6 +1,6 @@
 ---
 name: acta-audit
-description: Read-only consistency/drift check of a project's Acta docs vs reality — doc↔code drift, broken links, stale TBDs, brain/index/registry, conventions; reports findings (--fix does safe mechanical fixes only, never fabricates). Trigger on /acta-audit, "audit the docs", "check doc drift".
+description: Read-only check that the docs still match the code — drift, dead links, stale TBDs, brain/registry; reports findings (--fix: safe mechanical fixes only). Trigger on /acta-audit, "audit the docs", "check doc drift".
 ---
 
 # acta-audit

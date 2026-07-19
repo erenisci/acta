@@ -14,4 +14,4 @@ done
 cp -R "${SRC}/acta" "${CLAUDE}/"
 echo "installed shared resources: ~/.claude/acta"
 echo
-echo "Acta installed. Restart Claude Code, then run /acta-brief"
+echo "Acta installed. Restart Claude Code, then run /acta-init"
