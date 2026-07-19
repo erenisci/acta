@@ -49,3 +49,5 @@ every change was made. Optimize for **decisions, not keystrokes.**
 - Docs **evolve with the code** (keep them in sync; don't let them rot).
 - Every decision is **traceable** (ADR).
 - **Right-size for a solo builder**, not a 50-person company.
+- **Never read secrets.** Derive env docs only from the committed, secret-less template (`.env.example` / `.env.sample`)
+  — never open a real `.env`, `.env.local`, credential, or key file. Record variable **names and purpose, never values.**

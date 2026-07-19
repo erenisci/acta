@@ -29,7 +29,8 @@ Run these read-only checks and collect findings. Rank each **🔴 broken · 🟡
 2. **Broken links** — every relative link inside `docs/**` (and the brain) points to an existing file.
 3. **Doc ↔ code drift** — compare docs against the code and flag mismatches:
    - stack in `arch-overview` / registry vs `package.json` / `pyproject.toml` / `go.mod` / etc.
-   - endpoints in `api.md` vs routes; env vars in `env-vars.md` vs `.env(.example)`; `project-structure` tree vs the
+   - endpoints in `api.md` vs routes; env-var **names** in `env-vars.md` vs `.env.example` (the committed template only —
+     never open a real `.env`/`.env.local`; compare names, never values); `project-structure` tree vs the
      actual top-level folders; tables in `database-design` vs schema/migrations.
    - "doc says X, code says Y" → report both sides.
 4. **Stale / empty** — docs still mostly `TBD`; `updated:` far behind recent code changes; scaffolds never filled.

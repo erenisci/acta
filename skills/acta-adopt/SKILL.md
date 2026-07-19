@@ -23,6 +23,7 @@ English only.
    - Routes/endpoints: `app/`, `pages/`, `routes/`, controllers, OpenAPI files.
    - Data: schemas, migrations, ORM models → for `db-design`/`erd`.
    - Ops signals: Dockerfile, CI config (`.github/workflows`, etc.), `.env.example` → `env-vars`/`ci-cd`/`deployment`.
+     **Read only the committed `.env.example` / `.env.sample` template — never a real `.env`/`.env.local` (secrets); record names, not values.**
    - Tests: presence/kind → `testing-strategy`.
    - Domain signals → project **type + pack** via `~/.claude/acta/project-types.md`: PyTorch/scikit/dataset → `ml`;
      langchain/embeddings/vector store → `llm`; Solidity/Foundry/Hardhat → `web3`; Godot/Unity/Unreal → `game`;
