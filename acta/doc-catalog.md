@@ -251,7 +251,7 @@ and only checks them if the folder exists:
 
 - `docs/design/` — owned by `acta-design` / `acta-design-prompt` / `acta-design-track` (brand, design-system, messaging, components).
 - `docs/business/` — owned by `acta-business` (business-model, pricing, unit-economics, projections, go-to-market, competitors). Git-ignored by default.
-- `docs/legal/` — owned by `acta-legal` / `acta-legal-track` (overview, privacy, terms, cookies, consent, data-processing, compliance-checklist). Git-ignored by default.
+- `docs/legal/` — owned by `acta-legal` / `acta-legal-track` / `acta-legal-brief` (overview, privacy, terms, cookies, consent, data-processing, compliance-checklist, and the consolidated `lawyer-brief.md`). Git-ignored by default.
 
-These follow the same invariants (never fabricate, in-place/anti-bloat, English) but their exact doc set is defined in
+These follow the same invariants (never fabricate, in-place/anti-bloat, project content language) but their exact doc set is defined in
 each skill's `SKILL.md`, not here — because they are conversational/iterative, not a fixed scaffold.

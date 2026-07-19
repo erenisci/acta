@@ -74,3 +74,9 @@ Core disciplines: product · project · code · quality · ops · ai. Depth: cor
 > type:
 > disciplines:
 > depth:
+
+## 11. Documentation language
+
+What language should the generated documentation be in? It can differ from the language of this brief. Default: English.
+
+> language:

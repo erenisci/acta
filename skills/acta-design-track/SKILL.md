@@ -34,4 +34,4 @@ English only.
 - **Docs mirror the code.** The design-system reflects what the code actually does now — not an aspiration, not history.
 - **Anti-bloat.** In-place, consolidated; no `design-system-v2.md`, no append-only growth. Drop stale tokens/variants.
 - Never fabricate values not present in the code → `TBD` / ask.
-- Never touch code. English only. Operate by `~/.claude/acta/principles.md`.
+- Never touch code. Content in the project's documentation language. Operate by `~/.claude/acta/principles.md`.

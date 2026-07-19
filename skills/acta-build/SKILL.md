@@ -9,7 +9,9 @@ Turns a filled brief into a right-sized documentation set **and a brain** that l
 Shared resources at `~/.claude/acta/`: `doc-catalog.md` (the contract), `disciplines.md`, `templates/`.
 
 ## Language
-All generated content and your messages are **English**.
+Read the **documentation language** from the brief (section 11). If blank or `?`, confirm with the user; default
+**English**. Generate **all doc/brain content in that language**, record it as the registry `language:`, and talk to
+the user in the language they use. The filename convention, `acta:` markers, and paths stay English regardless.
 
 ## Pre-condition
 
@@ -92,4 +94,4 @@ conversationally to reconstruct the brief's answers first.)
 - Anti-bloat: generate concise docs; don't pad. Ongoing growth is `acta-track`'s job and follows growth policies.
 - Link hygiene: cross-link only to docs generated in this run. Never emit a link — or a `TBD (tier)` placeholder — to a doc that was not generated; omit out-of-scope references.
 - Operate by `~/.claude/acta/principles.md`: choose the simplest solution that fits, never force methodologies, and record significant decisions as ADRs.
-- English only. Solo right-sizing: render `(solo-light)` docs in their lightweight form.
+- Generate content in the project's documentation language (registry `language:`, default English); paths/markers stay English. Solo right-sizing: render `(solo-light)` docs in their lightweight form.

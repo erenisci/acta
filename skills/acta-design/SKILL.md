@@ -13,7 +13,7 @@ design inherits the same truth as the code, not a generic look.
 Shared: `~/.claude/acta/principles.md`. Reads the project's `docs/product/*` and any styling in the code.
 
 ## Language
-English only.
+Generate content in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `~/.claude/acta/principles.md`.
 
 ## What it establishes — `docs/design/`
 
@@ -55,5 +55,5 @@ no design-system), skipping web/components.
 - **Detect, don't dictate.** The design-system mirrors the project's real conventions; it never forces a stack.
 - Never fabricate a brand asset, hex, or font the user didn't give or approve → `TBD`.
 - Never overwrite existing design docs/code without consent. Anti-bloat: in-place, consolidated, no versioned files.
-- Domain-agnostic. English only. Operate by `~/.claude/acta/principles.md`.
+- Domain-agnostic. Content in the project's documentation language. Operate by `~/.claude/acta/principles.md`.
 - Turn the docs into Claude Design prompts with `/acta-design-prompt`; keep them in sync with `/acta-design-track`.

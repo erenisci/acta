@@ -11,9 +11,16 @@ intent as a starting point. It writes nothing else. Once filled, `/acta-build` t
 Shared resources live at `~/.claude/acta/` (sibling of the `skills/` folder). This skill reads
 `~/.claude/acta/brief-template.md`.
 
-## Language
+## Language — two decisions start here
 
-All output is **English** (file content and your messages). This holds even if the user is chatting in another language.
+1. **Brief language.** If `/acta-brief` opens the conversation, or the user is writing in another language, **ask
+   which language the brief should be written in** — propose the language they're already using, and confirm. Default
+   English. Write the brief in that language and talk to the user in it.
+2. **Documentation language.** The brief's **final question** (template section 11) asks what language the *generated
+   docs* should be in — it may differ from the brief. You don't answer it; the user does, and `/acta-build` reads it.
+
+Always English regardless of either choice: the `<PROJECT>_BRIEF.md` filename, `acta:` markers, and paths.
+See `~/.claude/acta/principles.md`.
 
 ## Flow
 
@@ -26,11 +33,12 @@ All output is **English** (file content and your messages). This holds even if t
 2. **Overwrite guard.** If a `*_BRIEF.md` already exists, do NOT clobber it. Ask once:
    `merge / overwrite / open existing / pick a different name`. Default to **open existing** (show its path).
 
-3. **Write the brief.** Render `~/.claude/acta/brief-template.md`, replacing `{{PROJECT_NAME}}` with the human
-   project name. Write it to `<project>/<PROJECT>_BRIEF.md`. Do not fill any answers — the human does that. Keep
-   the sign-language header intact.
+3. **Write the brief.** Render `~/.claude/acta/brief-template.md` **in the chosen brief language** (translate the
+   template's prompts/labels; keep the section numbers and the sign-language header), replacing `{{PROJECT_NAME}}`
+   with the human project name. Write it to `<project>/<PROJECT>_BRIEF.md`. Do not fill any answers — the human does
+   that, including section 11 (documentation language).
 
-4. **Tell the user, briefly** (English), the moves and the next step:
+4. **Tell the user, briefly** (in the brief language), the moves and the next step:
    ```
    Created <PROJECT>_BRIEF.md. Fill in what you know; for any field you can instead put:
      ?  → suggest one for me

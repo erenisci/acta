@@ -14,7 +14,7 @@ briefs change and the **lawyer has to look again.** This catches that.
 Shared: `~/.claude/acta/principles.md`. Reads the code/config + `docs/legal/*`.
 
 ## Language
-English only.
+Update briefs in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `~/.claude/acta/principles.md`.
 
 ## Pre-condition
 `docs/legal/` must exist. If not → run `/acta-legal` first.
@@ -31,9 +31,11 @@ English only.
 3. **Raise the re-review flag.** For every change that alters legal exposure, record a clear
    **"⚠️ needs lawyer re-review: <what changed>"** item in `docs/legal/compliance-checklist.md` (and surface it in
    `docs/progress.md` → Blocked, and the `CLAUDE.md` legal pointer) so it isn't forgotten before shipping.
+4. **Refresh the handoff.** If `docs/legal/lawyer-brief.md` exists, regenerate it (or suggest `/acta-legal-brief`) so
+   the consolidated lawyer document reflects the change and the new re-review item.
 
 ## Rules
 - **Never write binding legal text, never give legal advice.** Update briefs + flag for the lawyer.
 - **Always flag re-review** when exposure changes — silence is the dangerous failure here.
 - Region-aware: a new market recomputes the regimes.
-- Never fabricate a legal fact → `TBD` / ask. Anti-bloat, in-place. English only. Operate by `~/.claude/acta/principles.md`.
+- Never fabricate a legal fact → `TBD` / ask. Anti-bloat, in-place. Content in the project's documentation language. Operate by `~/.claude/acta/principles.md`.

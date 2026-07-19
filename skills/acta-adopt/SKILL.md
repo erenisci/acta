@@ -13,7 +13,7 @@ Shared: `~/.claude/acta/` (`doc-catalog.md`, `disciplines.md`, `templates/`). Sa
 overwrite policy is always SKIP.**
 
 ## Language
-English only.
+Generate content in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `~/.claude/acta/principles.md`.
 
 ## Flow
 
@@ -65,4 +65,4 @@ English only.
   is safe-by-default on a real project.
 - Never fabricate. Reverse-engineer only what the code supports; everything else is `TBD` or an intake question.
 - Idempotent: re-running only fills newly-missing gaps; already-present docs stay untouched; brain/registry regenerate in place.
-- English only. Solo right-sizing applies. After adopt, ongoing updates are `/acta-track`'s job.
+- Content in the project's documentation language (default English). Solo right-sizing applies. After adopt, ongoing updates are `/acta-track`'s job.

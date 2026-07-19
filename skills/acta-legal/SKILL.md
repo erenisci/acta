@@ -15,7 +15,7 @@ binding legal text itself** — that's the lawyer's job.
 Shared: `~/.claude/acta/principles.md`. Reads `docs/product/*`, `docs/business/*`, and the code (data, cookies, vendors).
 
 ## Language
-English only (briefs). The applicable **regime** depends on where your users are, not on the doc language.
+Write briefs in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. The applicable **regime** depends on where your users are, not on the doc language.
 
 ## Step 1 — Determine the applicable regimes (region-aware)
 Ask (or detect): **where are your users** · **where are you / the company based** · do you use **cookies / analytics /
@@ -36,6 +36,9 @@ tracking** · **payments** · target **children** · handle **special data** (he
   (sub-processors, cross-border transfers), retention, admin access, and the open decisions to resolve. (This mirrors
   the proven "lawyer-briefing" pattern — the doc is what the lawyer needs, not a pretend policy.)
 
+**Handoff:** when you're ready to see a lawyer, `/acta-legal-brief` consolidates all of these into one printable
+document to take to the meeting.
+
 ## Step 3 — Wire & protect
 Add a "Legal" pointer to `CLAUDE.md` + the docs index. `docs/legal/` is **git-ignored by `acta-build`** — sensitive,
 stays local.
@@ -46,4 +49,4 @@ stays local.
 - **Region-aware.** Regimes follow the users' locations; when in doubt, flag for the user + lawyer, don't guess.
 - **Never fabricate a legal fact** (a retention period, a lawful basis) → `TBD` / ask.
 - Keep it current with `/acta-legal-track` (a product change can create a new legal obligation).
-- Anti-bloat, in-place. English only. Operate by `~/.claude/acta/principles.md`.
+- Anti-bloat, in-place. Content in the project's documentation language. Operate by `~/.claude/acta/principles.md`.

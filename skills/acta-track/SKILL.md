@@ -13,7 +13,7 @@ Shared: `~/.claude/acta/doc-catalog.md` defines each doc's **growth policy** —
 
 ## Language
 
-English only.
+Update content in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `~/.claude/acta/principles.md`.
 
 ## Pre-condition
 

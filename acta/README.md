@@ -22,6 +22,7 @@ methodology to a project — and, crucially, wires every produced document into 
 | acta-business | `/acta-business` | pricing / money | Iterative modeling: pricing, unit economics, best/base/worst projections in `docs/business/`. |
 | acta-legal | `/acta-legal` | before shipping | Region-aware legal briefs (KVKK/GDPR/CCPA/…) — warns you, briefs a lawyer; never binding text. |
 | acta-legal-track | `/acta-legal-track` | product change | Flags when a change (cookies, new data/market/vendor) needs a lawyer re-review; updates the briefs. |
+| acta-legal-brief | `/acta-legal-brief` | before meeting a lawyer | Consolidate the separate legal briefs into ONE hand-to-your-lawyer document; never legal advice. |
 
 ## Brief sign language (used by acta-brief / acta-build)
 
@@ -46,7 +47,7 @@ In any brief field the human may put a single symbol instead of an answer:
 2. **Never overwrite without consent.** Existing doc → offer merge / overwrite / skip (adopt: always skip + report).
 3. **Idempotent.** `CLAUDE.md` brain block, registry, and `docs/README.md` are marker-delimited or regenerated — re-running never duplicates.
 4. **Anti-bloat.** Current-state docs (PROGRESS, ROADMAP, PRD…) are consolidated in place. Only log-type docs (CHANGELOG, decision logs) get structured appends. Docs must not grow without bound.
-5. **English only** for all generated content and skill dialogue.
+5. **Content language.** Generated docs/briefs are written in the project's chosen **content language** (stored in the registry `language:`, default English); talk to the user in the language they use. `SKILL.md`, slash-command triggers, `acta:` markers, and file/folder paths stay English regardless.
 6. **Solo right-sizing.** Team-only artifacts (Contribution guide, agent roles, heavy RFC/incident process) are kept light or marked optional.
 
 ## Filename convention (common open-source standard)
@@ -61,5 +62,5 @@ In any brief field the human may put a single symbol instead of an answer:
 ## Paths
 
 - Shared resources (this folder): `~/.claude/acta/`
-- Skills: `~/.claude/skills/acta-brief`, `acta-build`, `acta-track`, `acta-adopt`, `acta-audit`, `acta-design`, `acta-design-prompt`, `acta-design-track`, `acta-business`, `acta-legal`, `acta-legal-track`
+- Skills: `~/.claude/skills/acta-brief`, `acta-build`, `acta-track`, `acta-adopt`, `acta-audit`, `acta-design`, `acta-design-prompt`, `acta-design-track`, `acta-business`, `acta-legal`, `acta-legal-track`, `acta-legal-brief`
 - Per-project state written by the skills: `<project>/.claude/acta.md` (registry) + `<project>/CLAUDE.md` (brain block).

@@ -132,9 +132,10 @@ Brand, design-system, and real generated design (landing, logo, deck, ads) — p
 An **iterative** modeling partner (not a one-shot): pricing, unit economics (LTV / CAC / margin), and
 best/base/worst projections with your real numbers. It sanity-checks every change before you commit to it.
 
-⚖️ **Legal** — `/acta-legal` · `/acta-legal-track`
+⚖️ **Legal** — `/acta-legal` · `/acta-legal-track` · `/acta-legal-brief`
 **Region-aware** briefs (KVKK, GDPR, CCPA, PIPL, APPI…): it warns _you_ about the risks and briefs a
 _lawyer_ with the facts — but **never writes binding legal text**, and always says _get a lawyer_.
+`/acta-legal-brief` consolidates everything into one document to take to that lawyer.
 
 > 🔒 Pricing and legal are sensitive, so `acta-build` git-ignores `docs/business/` + `docs/legal/` by default.
 > Claude still reads them locally — they just never leak to a public repo.

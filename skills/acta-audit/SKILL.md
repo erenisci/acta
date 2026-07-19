@@ -13,7 +13,7 @@ Shared resources at `~/.claude/acta/`: `doc-catalog.md` (the contract), `discipl
 `principles.md`.
 
 ## Language
-English only.
+Write findings and any persisted items in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `~/.claude/acta/principles.md`.
 
 ## Pre-condition
 
@@ -100,4 +100,4 @@ consent:**
 
 - Read-only by default; `--fix` performs only the mechanical set above.
 - Never fabricate; unknown / contradiction / gap → **report**, don't invent.
-- Idempotent. English only. Operate by `~/.claude/acta/principles.md`.
+- Idempotent. Content in the project's documentation language. Operate by `~/.claude/acta/principles.md`.
