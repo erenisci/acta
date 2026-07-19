@@ -8,8 +8,8 @@ description: Start a new project — create <PROJECT>_BRIEF.md for you to fill (
 The **entry point** for a new project. It produces one file — `<PROJECT>_BRIEF.md` — that captures the human's
 intent as a starting point. It writes nothing else. Once filled, `/acta-build` turns it into real docs + a brain.
 
-Shared resources live at `~/.claude/acta/` (sibling of the `skills/` folder). This skill reads
-`~/.claude/acta/brief-template.md`.
+Shared resources live at `${CLAUDE_PLUGIN_ROOT}/acta/` (sibling of the `skills/` folder). This skill reads
+`${CLAUDE_PLUGIN_ROOT}/acta/brief-template.md`.
 
 ## Language — two decisions start here
 
@@ -20,7 +20,7 @@ Shared resources live at `~/.claude/acta/` (sibling of the `skills/` folder). Th
    docs* should be in — it may differ from the brief. You don't answer it; the user does, and `/acta-build` reads it.
 
 Always English regardless of either choice: the `<PROJECT>_BRIEF.md` filename, `acta:` markers, and paths.
-See `~/.claude/acta/principles.md`.
+See `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
 
 ## Flow
 
@@ -33,7 +33,7 @@ See `~/.claude/acta/principles.md`.
 2. **Overwrite guard.** If a `*_BRIEF.md` already exists, do NOT clobber it. Ask once:
    `merge / overwrite / open existing / pick a different name`. Default to **open existing** (show its path).
 
-3. **Write the brief.** Render `~/.claude/acta/brief-template.md` **in the chosen brief language** (translate the
+3. **Write the brief.** Render `${CLAUDE_PLUGIN_ROOT}/acta/brief-template.md` **in the chosen brief language** (translate the
    template's prompts/labels; keep the section numbers and the sign-language header), replacing `{{PROJECT_NAME}}`
    with the human project name. Write it to `<project>/<PROJECT>_BRIEF.md`. Do not fill any answers — the human does
    that, including section 11 (documentation language).

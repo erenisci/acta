@@ -10,10 +10,10 @@ content/copy** to fill them. Claude Design is great at visuals but weak at conte
 skill fixes both: the prompt carries the **exact spec** and a hard **scope lock**, and the **real copy** from
 `messaging.md`, so Claude Design builds *your* thing, not a generic guess.
 
-Shared: `~/.claude/acta/principles.md`. Reads `docs/design/*` and, for web, `docs/product/*` (feature-specs, requirements).
+Shared: `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`. Reads `docs/design/*` and, for web, `docs/product/*` (feature-specs, requirements).
 
 ## Language
-Write copy and docs in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `~/.claude/acta/principles.md`.
+Write copy and docs in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
 
 ## Pre-condition
 `docs/design/design-system.md` + `messaging.md` must exist. If not → run `/acta-design` first (it establishes them).
@@ -44,4 +44,4 @@ Write copy and docs in the project's documentation language (registry `language:
 - **Real copy, never lorem.** Pull from `messaging.md`; if a piece is missing, mark it `TBD` in the prompt (don't fabricate).
 - **On-brand, always.** Every prompt uses the `design-system` tokens/rules; nothing off-token.
 - **Consistent format** across every surface (web/logo/deck/ads/og-image) so the whole project's prompts feel like one system.
-- Never fabricate. Content in the project's documentation language. Operate by `~/.claude/acta/principles.md`.
+- Never fabricate. Content in the project's documentation language. Operate by `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.

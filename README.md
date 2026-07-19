@@ -162,14 +162,14 @@ Filling the brief, any field can be a single symbol instead of an answer:
 
 ## Install
 
-```bash
-git clone https://github.com/erenisci/acta.git
-cd acta
-./install.ps1     # Windows (PowerShell)
-./install.sh      # macOS / Linux
+Acta is a **Claude Code plugin.** In Claude Code, add the marketplace and install it:
+
+```
+/plugin marketplace add erenisci/acta
+/plugin install acta@acta
 ```
 
-Then restart Claude Code so the `/acta-*` commands register.
+The `/acta-*` skills register immediately. Update anytime with `/plugin marketplace update acta`.
 
 ## Quick start
 

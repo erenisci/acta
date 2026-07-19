@@ -10,10 +10,10 @@ source of truth, establishes the project's **design source of truth** under `doc
 design** (web pages, logo, deck, ads, og-image) that stays consistent with it. Doc-driven and domain-agnostic — the
 design inherits the same truth as the code, not a generic look.
 
-Shared: `~/.claude/acta/principles.md`. Reads the project's `docs/product/*` and any styling in the code.
+Shared: `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`. Reads the project's `docs/product/*` and any styling in the code.
 
 ## Language
-Generate content in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `~/.claude/acta/principles.md`.
+Generate content in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
 
 ## What it establishes — `docs/design/`
 
@@ -55,5 +55,5 @@ no design-system), skipping web/components.
 - **Detect, don't dictate.** The design-system mirrors the project's real conventions; it never forces a stack.
 - Never fabricate a brand asset, hex, or font the user didn't give or approve → `TBD`.
 - Never overwrite existing design docs/code without consent. Anti-bloat: in-place, consolidated, no versioned files.
-- Domain-agnostic. Content in the project's documentation language. Operate by `~/.claude/acta/principles.md`.
+- Domain-agnostic. Content in the project's documentation language. Operate by `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
 - Turn the docs into Claude Design prompts with `/acta-design-prompt`; keep them in sync with `/acta-track`.

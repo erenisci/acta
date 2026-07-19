@@ -9,15 +9,15 @@ The **trust check.** Acta's whole value is a trustworthy engineering memory — 
 from reality. **Read-only by default:** it reports; it fixes only mechanical things when asked (`--fix`), and it
 **never fabricates content or guesses**.
 
-Shared resources at `~/.claude/acta/`: `doc-catalog.md` (the contract), `disciplines.md`, `project-types.md`,
+Shared resources at `${CLAUDE_PLUGIN_ROOT}/acta/`: `doc-catalog.md` (the contract), `disciplines.md`, `project-types.md`,
 `principles.md`.
 
 ## Language
-Write findings and any persisted items in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `~/.claude/acta/principles.md`.
+Write findings and any persisted items in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
 
 ## Pre-condition
 
-Read `.claude/acta.md` (registry) and `~/.claude/acta/doc-catalog.md`. If there is no registry, this project isn't
+Read `.claude/acta.md` (registry) and `${CLAUDE_PLUGIN_ROOT}/acta/doc-catalog.md`. If there is no registry, this project isn't
 set up with Acta yet → suggest `/acta-build` (greenfield) or `/acta-adopt` (existing code). Don't guess a doc set without them.
 
 ## Checks
@@ -100,4 +100,4 @@ consent:**
 
 - Read-only by default; `--fix` performs only the mechanical set above.
 - Never fabricate; unknown / contradiction / gap → **report**, don't invent.
-- Idempotent. Content in the project's documentation language. Operate by `~/.claude/acta/principles.md`.
+- Idempotent. Content in the project's documentation language. Operate by `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.

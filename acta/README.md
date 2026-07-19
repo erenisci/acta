@@ -59,6 +59,8 @@ In any brief field the human may put a single symbol instead of an answer:
 
 ## Paths
 
-- Shared resources (this folder): `~/.claude/acta/`
-- Skills: `~/.claude/skills/acta-init`, `acta-build`, `acta-track`, `acta-adopt`, `acta-audit`, `acta-design`, `acta-design-prompt`, `acta-business`, `acta-legal`, `acta-legal-brief`
+- **Acta ships as a Claude Code plugin** (manifest in `.claude-plugin/`). Install with
+  `/plugin marketplace add erenisci/acta` → `/plugin install acta@acta`.
+- Skills live in `skills/acta-*`; these shared resources (this folder) in `acta/`. Skills reference them as
+  **`${CLAUDE_PLUGIN_ROOT}/acta/...`**, which Claude Code expands to wherever the plugin is installed.
 - Per-project state written by the skills: `<project>/.claude/acta.md` (registry) + `<project>/CLAUDE.md` (brain block).

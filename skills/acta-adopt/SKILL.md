@@ -8,12 +8,12 @@ description: Existing codebase with few docs — reverse-engineer only the missi
 The **backfill**. Point it at a real project that's missing docs and it reverse-engineers a right-sized doc set
 from the code, then builds the brain — **without touching anything that already exists**.
 
-Shared: `~/.claude/acta/` (`doc-catalog.md`, `disciplines.md`, `templates/`). Same catalog/templates as
+Shared: `${CLAUDE_PLUGIN_ROOT}/acta/` (`doc-catalog.md`, `disciplines.md`, `templates/`). Same catalog/templates as
 `acta-build`, so adopted docs are consistent with built ones. The difference: **source is the code, and the
 overwrite policy is always SKIP.**
 
 ## Language
-Generate content in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `~/.claude/acta/principles.md`.
+Generate content in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
 
 ## Flow
 
@@ -25,7 +25,7 @@ Generate content in the project's documentation language (registry `language:`, 
    - Ops signals: Dockerfile, CI config (`.github/workflows`, etc.), `.env.example` → `env-vars`/`ci-cd`/`deployment`.
      **Read only the committed `.env.example` / `.env.sample` template — never a real `.env`/`.env.local` (secrets); record names, not values.**
    - Tests: presence/kind → `testing-strategy`.
-   - Domain signals → project **type + pack** via `~/.claude/acta/project-types.md`: PyTorch/scikit/dataset → `ml`;
+   - Domain signals → project **type + pack** via `${CLAUDE_PLUGIN_ROOT}/acta/project-types.md`: PyTorch/scikit/dataset → `ml`;
      langchain/embeddings/vector store → `llm`; Solidity/Foundry/Hardhat → `web3`; Godot/Unity/Unreal → `game`;
      firmware/Arduino/ESP32/RTOS → `hardware`; Airflow/dbt/Spark → `data`; scanner/detection/exploit tooling → `security`;
      Terraform/k8s/Ansible → `devops`; ROS/actuator/SLAM → `robotics`; ARKit/Unity XR → `xr`; Stripe/payments/ledger → `fintech`;

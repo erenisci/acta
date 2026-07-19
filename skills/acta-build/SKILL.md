@@ -6,7 +6,7 @@ description: Turn the filled brief into a project-type-aware doc set plus the CL
 # acta-build
 
 Turns a filled brief into a right-sized documentation set **and a brain** that later Claude sessions use.
-Shared resources at `~/.claude/acta/`: `doc-catalog.md` (the contract), `disciplines.md`, `templates/`.
+Shared resources at `${CLAUDE_PLUGIN_ROOT}/acta/`: `doc-catalog.md` (the contract), `disciplines.md`, `templates/`.
 
 ## Language
 Read the **documentation language** from the brief (section 11). If blank or `?`, confirm with the user; default
@@ -40,7 +40,7 @@ conversationally to reconstruct the brief's answers first.)
    first. Keep it short — don't interrogate. Anything still unresolved → `TBD` (recorded in the doc's Open Questions).
 
 4. **Detect the project type & propose a fitting structure.** Infer the project **type** and **stack** from the
-   brief ("What are you building" + "Tech preferences") using `~/.claude/acta/project-types.md`. Show the detection
+   brief ("What are you building" + "Tech preferences") using `${CLAUDE_PLUGIN_ROOT}/acta/project-types.md`. Show the detection
    in 2–3 lines of evidence (`Detected: <type> — signals: …`), then propose the fitted structure via
    `AskUserQuestion`: the profile's **core disciplines at its depth** PLUS any **domain pack** the type implies
    (game → game pack; LLM app → llm; ML → ml; security → security; data → data; embedded → hardware; web3 → web3).
@@ -93,5 +93,5 @@ conversationally to reconstruct the brief's answers first.)
 - Idempotent: re-running regenerates the brain/registry/index in place and skips existing docs by default.
 - Anti-bloat: generate concise docs; don't pad. Ongoing growth is `acta-track`'s job and follows growth policies.
 - Link hygiene: cross-link only to docs generated in this run. Never emit a link — or a `TBD (tier)` placeholder — to a doc that was not generated; omit out-of-scope references.
-- Operate by `~/.claude/acta/principles.md`: choose the simplest solution that fits, never force methodologies, and record significant decisions as ADRs.
+- Operate by `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`: choose the simplest solution that fits, never force methodologies, and record significant decisions as ADRs.
 - Generate content in the project's documentation language (registry `language:`, default English); paths/markers stay English. Solo right-sizing: render `(solo-light)` docs in their lightweight form.

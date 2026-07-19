@@ -12,7 +12,7 @@ binding legal text itself** — that's the lawyer's job.
 > ⚠️ **Not legal advice.** acta-legal produces *briefings and decision lists*, not enforceable policies. Anything
 > user-facing must be reviewed and finalized by a qualified lawyer before you ship.
 
-Shared: `~/.claude/acta/principles.md`. Reads `docs/product/*`, `docs/business/*`, and the code (data, cookies, vendors).
+Shared: `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`. Reads `docs/product/*`, `docs/business/*`, and the code (data, cookies, vendors).
 
 ## Language
 Write briefs in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. The applicable **regime** depends on where your users are, not on the doc language.
@@ -49,4 +49,4 @@ stays local.
 - **Region-aware.** Regimes follow the users' locations; when in doubt, flag for the user + lawyer, don't guess.
 - **Never fabricate a legal fact** (a retention period, a lawful basis) → `TBD` / ask.
 - Keep it current with `/acta-track` (a product change can create a new legal obligation).
-- Anti-bloat, in-place. Content in the project's documentation language. Operate by `~/.claude/acta/principles.md`.
+- Anti-bloat, in-place. Content in the project's documentation language. Operate by `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.

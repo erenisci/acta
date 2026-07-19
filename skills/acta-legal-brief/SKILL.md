@@ -12,12 +12,12 @@ everything counsel needs to advise you, in the order they'll want it.
 > ⚠️ **NOT LEGAL ADVICE.** This is a *briefing you give to a qualified lawyer* so they can prepare the real,
 > binding documents. It contains no enforceable legal text and makes you compliant of nothing by itself.
 
-Shared: `~/.claude/acta/principles.md`. Reads `docs/legal/*`, `docs/product/*`, `docs/architecture/overview.md`, and
+Shared: `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`. Reads `docs/legal/*`, `docs/product/*`, `docs/architecture/overview.md`, and
 the registry (`.claude/acta.md`) for the project identity.
 
 ## Language
 Write the brief in the project's documentation language (registry `language:`, default English); talk to the user in
-the language they use. See `~/.claude/acta/principles.md`.
+the language they use. See `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
 
 ## Pre-condition
 `docs/legal/` must exist. If not → run `/acta-legal` first (and `/acta-track` to catch recent changes).
@@ -43,4 +43,4 @@ briefing, not legal advice, and the lawyer produces the binding documents.* Poin
 ## Rules
 - **Never write binding legal text, never give legal advice.** Consolidate the briefs + the decision list only.
 - **Never fabricate** an identity, a fact, or a regime → `TBD` / ask. Deduplicate; don't invent items not in the briefs.
-- Regenerate in place (single doc, no bloat). It is git-ignored with the rest of `docs/legal/`. Operate by `~/.claude/acta/principles.md`.
+- Regenerate in place (single doc, no bloat). It is git-ignored with the rest of `docs/legal/`. Operate by `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.

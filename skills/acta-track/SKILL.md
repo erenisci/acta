@@ -9,10 +9,10 @@ The **keeper**. One command reconciles the whole doc set with reality after you'
 have to say "update PRD, then CHANGELOG, then the design-system, then the legal briefs…". Its prime directive is
 **anti-bloat**: docs reflect the truth at their current size; they are not append-only journals.
 
-Shared: `~/.claude/acta/doc-catalog.md` defines each doc's **growth policy** — obey it strictly.
+Shared: `${CLAUDE_PLUGIN_ROOT}/acta/doc-catalog.md` defines each doc's **growth policy** — obey it strictly.
 
 ## Language
-Update content in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `~/.claude/acta/principles.md`.
+Update content in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
 
 ## Scope
 By default, track syncs **everything that exists** in the project: the engineering docs, and — if the folders are

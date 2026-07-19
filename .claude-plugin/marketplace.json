@@ -1,0 +1,19 @@
+{
+  "name": "acta",
+  "owner": {
+    "name": "erenisci",
+    "url": "https://github.com/erenisci"
+  },
+  "metadata": {
+    "description": "Acta — the engineering memory for Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "acta",
+      "source": "./",
+      "description": "Living docs + a CLAUDE.md brain Claude reads before it writes — with design, business & legal layers, kept in sync with your code.",
+      "category": "development",
+      "homepage": "https://github.com/erenisci/acta"
+    }
+  ]
+}
