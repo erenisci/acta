@@ -197,6 +197,26 @@ Plus the always-on layer: `README`, `CLAUDE.md` (the brain), `docs/README.md` in
 
 Filenames follow the common standard: root meta-files (`README.md`, `CHANGELOG.md`, `CLAUDE.md`) UPPERCASE; everything under `docs/` lowercase kebab-case. See [`acta/doc-catalog.md`](acta/doc-catalog.md) for the full contract, and [`acta/principles.md`](acta/principles.md) for how Claude is asked to operate.
 
+## The design layer
+
+Beyond docs, Acta runs your **brand, design system, and marketing** off the same source of truth — so the design
+tells the same story as the product and the code. Three skills:
+
+- **`/acta-design`** — establishes `docs/design/` (`brand.md`, `design-system.md`, `messaging.md`, `components.md`)
+  and **generates real design** — a landing page, logo, deck, or ads — as a live, self-contained Artifact you can open,
+  tweak in plain English, and export. The design-system captures **your** conventions: it detects whether you use
+  Tailwind / CSS Modules / styled-components / vanilla CSS and never dictates a stack, then wires the tokens into
+  `CLAUDE.md` so Claude follows them when it writes UI.
+- **`/acta-design-prompt`** — turns those docs into **paste-ready [Claude Design](https://claude.ai/design) prompts plus the real copy**,
+  **scope-locked** to the actual spec: if the sign-up form is email + password, the prompt tells Claude Design _not_ to
+  invent a phone field. On-brand, for every surface (web, logo, deck, ads, og-image).
+- **`/acta-design-track`** — when you change styling in code (a new token, a new variant), it syncs `docs/design/`
+  back to reality, in place.
+
+Because the brand, the copy, and the tokens all live in the same memory, `acta-design` never produces a generic
+look or lorem-ipsum — and `acta-audit` also checks the code for rogue colors or components that drift from the
+design-system.
+
 ## Roadmap
 
 Acta is a growing **family** of `acta-*` skills:
