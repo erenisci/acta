@@ -134,10 +134,11 @@ flowchart LR
 | **`/acta-track`** | after finishing work   | Brings **all** relevant docs to the current state in one shot — without bloating them.             |
 | **`/acta-adopt`** | existing code, no docs | Reverse-engineers the **missing** docs from your code. **Never overwrites** existing docs.         |
 
-> **Plus, outside the linear flow:** `/acta-audit` runs anytime to verify the docs still match the code (read-only),
-> and the **design layer** — `/acta-design` · `/acta-design-prompt` · `/acta-design-track` — turns your product docs
-> into a brand + design-system and generates real design (landing, logo, deck, ads) plus Claude Design prompts, all
-> from the same source of truth.
+> **Plus, outside the linear flow:** `/acta-audit` verifies the docs still match the code (read-only), the **design
+> layer** (`/acta-design` · `/acta-design-prompt` · `/acta-design-track`) turns your product docs into a brand +
+> design-system and real design, and the **business & legal layer** (`/acta-business` · `/acta-legal` ·
+> `/acta-legal-track`) models pricing and prepares region-aware legal briefs — all from the same source of truth.
+> The design, business, and legal sections below cover these.
 
 ## The brief sign language
 
@@ -217,13 +218,20 @@ Because the brand, the copy, and the tokens all live in the same memory, `acta-d
 look or lorem-ipsum — and `acta-audit` also checks the code for rogue colors or components that drift from the
 design-system.
 
-## Roadmap
+## Business & legal
 
-Acta is a growing **family** of `acta-*` skills:
+Two more layers turn a documented project into a **shippable product** — kept private by default (git-ignored):
 
-- ✅ `acta-brief` · `acta-build` · `acta-track` · `acta-adopt` · `acta-audit` — the documentation, memory & trust pipeline
-- ✅ `acta-design` · `acta-design-prompt` · `acta-design-track` — the brand / design-system / marketing layer: establish `docs/design/`, generate real design, produce scope-locked **Claude Design** prompts + copy, and keep it in sync with the code.
-- 💡 Deeper per-domain detection and code-aware doc filling.
+- **`/acta-business`** — an **iterative** modeling partner (not a one-shot). Reason through pricing, unit economics
+  (LTV / CAC / margin), and **best / base / worst-case** projections with your real numbers; it sanity-checks every
+  pricing change and records the decision in `docs/business/`.
+- **`/acta-legal`** + **`/acta-legal-track`** — **region-aware** legal groundwork: it detects which regimes apply to
+  your users (KVKK, GDPR, CCPA, PIPL, APPI…), **warns you** about the risks, and **briefs a lawyer** with the product
+  facts — but **never writes binding legal text**, and always says _get a lawyer_. `acta-legal-track` flags when a
+  product change (adding cookies, a new market, a new vendor) needs a fresh legal review.
+
+Because pricing, margins, and legal briefs are sensitive, `acta-build` git-ignores `docs/business/` and `docs/legal/`
+by default (toggleable per area) — Claude still reads them locally; they just never leak to a public repo.
 
 ## Contributing
 

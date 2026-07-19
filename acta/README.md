@@ -19,6 +19,9 @@ methodology to a project — and, crucially, wires every produced document into 
 | acta-design | `/acta-design` | brand / design | Establish `docs/design/` (brand, design-system, messaging) and **generate real design** (web / logo / deck / ads). |
 | acta-design-prompt | `/acta-design-prompt` | need a Claude Design prompt | Scope-locked, on-brand **Claude Design prompts + the real copy**, straight from the design docs. |
 | acta-design-track | `/acta-design-track` | design changed in code | Sync `docs/design/` to the code's real styling, in place (design's `acta-track`). |
+| acta-business | `/acta-business` | pricing / money | Iterative modeling: pricing, unit economics, best/base/worst projections in `docs/business/`. |
+| acta-legal | `/acta-legal` | before shipping | Region-aware legal briefs (KVKK/GDPR/CCPA/…) — warns you, briefs a lawyer; never binding text. |
+| acta-legal-track | `/acta-legal-track` | product change | Flags when a change (cookies, new data/market/vendor) needs a lawyer re-review; updates the briefs. |
 
 ## Brief sign language (used by acta-brief / acta-build)
 
@@ -58,5 +61,5 @@ In any brief field the human may put a single symbol instead of an answer:
 ## Paths
 
 - Shared resources (this folder): `~/.claude/acta/`
-- Skills: `~/.claude/skills/acta-brief`, `acta-build`, `acta-track`, `acta-adopt`, `acta-audit`, `acta-design`, `acta-design-prompt`, `acta-design-track`
+- Skills: `~/.claude/skills/acta-brief`, `acta-build`, `acta-track`, `acta-adopt`, `acta-audit`, `acta-design`, `acta-design-prompt`, `acta-design-track`, `acta-business`, `acta-legal`, `acta-legal-track`
 - Per-project state written by the skills: `<project>/.claude/acta.md` (registry) + `<project>/CLAUDE.md` (brain block).
