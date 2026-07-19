@@ -28,6 +28,8 @@ In any brief field the human may put a single symbol instead of an answer:
 
 - `disciplines.md` — the six disciplines → which documents belong to each, and the solo tiers (Core / Standard / Full).
 - `doc-catalog.md` — master list: every document → id, path, discipline, tier, sections, growth policy. **The contract every skill reads.**
+- `project-types.md` — project-type detection profiles → core disciplines + the matching domain pack.
+- `principles.md` — Acta's operating principles (senior-engineer role, right-sizing, decision-justification) injected into each project's brain.
 - `brief-template.md` — the `<PROJECT>_BRIEF.md` template, including the sign language explanation.
 - `templates/` — format-critical templates (`_doc-format.md` universal format, plus ADR / CHANGELOG / PRD / RFC / brain block / registry / docs-index).
 

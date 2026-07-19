@@ -65,9 +65,12 @@ Anything you're already nervous about.
 
 >
 
-## 10. Which disciplines to set up?
+## 10. Structure (optional — Acta auto-detects)
 
-Document areas to scaffold. Options: product · project · code · quality · ops · ai. Depth: core / standard / full.
+From your answers above, Acta detects the project **type** (web app, API, LLM app, game, ML, security tool …) and
+sets up a fitting structure — core disciplines + the matching domain pack. Leave blank to let it decide, or steer it.
+Core disciplines: product · project · code · quality · ops · ai. Depth: core / standard / full.
 
+> type:
 > disciplines:
 > depth:

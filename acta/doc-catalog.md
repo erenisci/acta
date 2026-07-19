@@ -119,6 +119,101 @@ ai-review-checklist | docs/ai/ai-review-checklist.md | standard | in-place   | _
 ai-doc-rules        | docs/ai/ai-doc-rules.md        | full     | in-place   | _doc-format | How AI keeps docs updated (points to acta-track)
 ai-decision-log     | docs/ai/ai-decision-log.md     | standard | append-log | _doc-format | Entries (date, decision, rationale, by AI/human)
 ai-workflow         | docs/ai/ai-workflow.md         | full     | in-place   | _doc-format | Brief -> Build -> code -> Track loop
+
+# ========== DOMAIN PACKS (project-type gated; generated ONLY when that type is selected) ==========
+
+# ---------- pack: ml (machine learning / data science) ----------
+ml-problem     | docs/ml/problem-framing.md | core     | in-place   | _doc-format | Problem; Success Metric (offline + online); Baseline; Constraints
+dataset-card   | docs/ml/dataset-card.md    | core     | in-place   | _doc-format | Source; Schema; Size; Splits; Labeling; Biases; License/PII
+experiments    | docs/ml/experiments.md     | core     | append-log | _doc-format | Log entries (date, hypothesis, setup, metric, result)
+model-card     | docs/ml/model-card.md      | core     | in-place   | _doc-format | Model; Intended Use; Training Data; Metrics; Limitations; Ethical Considerations
+ml-evaluation  | docs/ml/evaluation.md      | standard | in-place   | _doc-format | Metrics; Test Sets; Slices; Acceptance Thresholds
+mlops          | docs/ml/mlops.md           | standard | in-place   | _doc-format | Serving; Versioning; Monitoring; Drift; Retraining
+responsible-ai | docs/ml/responsible-ai.md  | full     | in-place   | _doc-format | Fairness; Bias; Privacy; Transparency
+
+# ---------- pack: llm (LLM application: agent / RAG / chatbot) ----------
+llm-architecture | docs/llm/architecture.md | core     | in-place | _doc-format | Approach (RAG/agent/fine-tune); Model(s); Data Sources; Flow
+prompts          | docs/llm/prompts.md      | core     | in-place | _doc-format | System Prompts; Templates; Versioning
+eval-harness     | docs/llm/eval-harness.md | core     | in-place | _doc-format | Eval Sets; Metrics (accuracy, faithfulness); Regression Checks
+guardrails       | docs/llm/guardrails.md   | standard | in-place | _doc-format | Input/Output Validation; Safety; Refusals; PII
+rag-sources      | docs/llm/rag-sources.md  | standard | in-place | _doc-format | Corpora; Chunking; Embeddings; Retrieval; Refresh
+cost-latency     | docs/llm/cost-latency.md | standard | in-place | _doc-format | Token Budget; Caching; Latency Targets; Fallbacks
+
+# ---------- pack: security (authorized / defensive security product or research) ----------
+sec-architecture | docs/security/architecture.md    | core     | in-place | _doc-format | Components; Trust Boundaries; Data Handling
+detection-rules  | docs/security/detection-rules.md | core     | in-place | _doc-format | Rules (id, logic, data source, false-positive rate)
+methodology      | docs/security/methodology.md     | core     | in-place | _doc-format | Scope; Approach; Tools; Rules of Engagement (authorized use only)
+compliance       | docs/security/compliance.md      | standard | in-place | _doc-format | Frameworks (SOC2/ISO/GDPR); Controls; Gaps
+sbom             | docs/security/sbom.md            | standard | in-place | _doc-format | Dependencies; SBOM; Provenance; Update Policy
+abuse-cases      | docs/security/abuse-cases.md     | full     | in-place | _doc-format | Misuse/abuse scenarios; Mitigations
+
+# ---------- pack: data (data engineering) ----------
+data-architecture | docs/data/architecture.md | core     | in-place | _doc-format | Sources; Storage; Layers (raw/staged/marts); Flow
+pipelines         | docs/data/pipelines.md    | core     | in-place | _doc-format | Jobs; Schedule; Dependencies; Idempotency
+data-quality      | docs/data/data-quality.md | standard | in-place | _doc-format | Checks; SLAs; Freshness; Alerting
+lineage           | docs/data/lineage.md      | standard | in-place | _doc-format | Sources -> Transforms -> Outputs
+data-governance   | docs/data/governance.md   | full     | in-place | _doc-format | Ownership; PII; Retention; Access
+
+# ---------- pack: game ----------
+gdd            | docs/game/game-design.md    | core     | in-place | _doc-format | Concept; Core Loop; Mechanics; Win/Lose; Progression
+level-design   | docs/game/level-design.md   | standard | in-place | _doc-format | Levels; Pacing; Difficulty Curve
+game-systems   | docs/game/systems.md        | standard | in-place | _doc-format | Entities; State; Save/Load; Economy/Balance
+asset-pipeline | docs/game/asset-pipeline.md | standard | in-place | _doc-format | Art/Audio Assets; Formats; Import; Naming
+
+# ---------- pack: hardware (embedded / IoT) ----------
+hardware-spec | docs/hardware/hardware-spec.md | core     | in-place | _doc-format | MCU/Board; Peripherals; Pinout; Power
+firmware      | docs/hardware/firmware.md      | core     | in-place | _doc-format | Architecture; Build/Flash; RTOS/Loop; Memory
+protocols     | docs/hardware/protocols.md     | standard | in-place | _doc-format | Interfaces (I2C/SPI/UART/BLE); Message Formats
+power-safety  | docs/hardware/power-safety.md  | full     | in-place | _doc-format | Power Budget; Thermal; Safety/Compliance
+
+# ---------- pack: web3 (smart contracts) ----------
+contracts      | docs/web3/contracts.md      | core     | in-place | _doc-format | Contracts; Responsibilities; Interfaces; Upgradeability
+contract-audit | docs/web3/security-audit.md | core     | in-place | _doc-format | Threats (reentrancy, overflow, access control); Checks; Audit Status
+tokenomics     | docs/web3/tokenomics.md     | standard | in-place | _doc-format | Token; Supply; Incentives; Flows (if applicable)
+gas-deployment | docs/web3/gas-deployment.md | standard | in-place | _doc-format | Networks; Deploy; Gas; Verification
+
+# ---------- pack: devops (infrastructure / platform / SRE) ----------
+iac           | docs/devops/infrastructure-as-code.md | core     | in-place | _doc-format | Providers; Modules; State; Environments
+orchestration | docs/devops/orchestration.md          | core     | in-place | _doc-format | Containers; k8s/Compose; Services; Scaling
+environments  | docs/devops/environments.md           | standard | in-place | _doc-format | Dev/Staging/Prod; Promotion; Secrets
+sre-slo       | docs/devops/sre-slo.md                | standard | in-place | _doc-format | SLIs/SLOs; Error Budget; On-call; Alerts
+infra-cost    | docs/devops/cost.md                   | full     | in-place | _doc-format | Cost Drivers; Budgets; Optimization
+
+# ---------- pack: robotics ----------
+robot-architecture | docs/robotics/architecture.md | core     | in-place | _doc-format | Nodes/Topics; Compute; Actuators/Sensors; Comms
+control            | docs/robotics/control.md      | core     | in-place | _doc-format | Kinematics; Control Loops; Motion Planning
+perception         | docs/robotics/perception.md   | standard | in-place | _doc-format | Sensors; Fusion; Localization/Mapping
+robot-safety       | docs/robotics/safety.md       | core     | in-place | _doc-format | Failure Modes; E-stop; Operating Envelope
+robot-simulation   | docs/robotics/simulation.md   | standard | in-place | _doc-format | Sim Environment; Sim-to-Real; Test Scenarios
+
+# ---------- pack: xr (AR / VR / mixed reality) ----------
+xr-experience       | docs/xr/experience.md          | core     | in-place | _doc-format | Concept; Immersion; Scenes; User Journey
+xr-interaction      | docs/xr/interaction.md         | core     | in-place | _doc-format | Input (hands/controllers/gaze); Locomotion; Feedback
+comfort-performance | docs/xr/comfort-performance.md | core     | in-place | _doc-format | Framerate Budget; Comfort (motion sickness); LOD
+xr-assets           | docs/xr/assets.md              | standard | in-place | _doc-format | 3D/Audio Assets; Formats; Optimization
+
+# ---------- pack: fintech (payments / regulated finance) ----------
+payments       | docs/fintech/payments.md   | core     | in-place | _doc-format | Flows; Providers; Idempotency; Refunds/Disputes
+ledger         | docs/fintech/ledger.md     | core     | in-place | _doc-format | Double-entry; Reconciliation; Balances; Audit Trail
+fin-compliance | docs/fintech/compliance.md | core     | in-place | _doc-format | KYC/AML; PCI-DSS; Regulatory; Reporting
+fraud-risk     | docs/fintech/fraud-risk.md | standard | in-place | _doc-format | Risk Signals; Limits; Monitoring
+
+# ---------- pack: scientific (research / simulation / HPC) ----------
+research-plan   | docs/scientific/research-plan.md   | core     | in-place | _doc-format | Question; Hypotheses; Methods; Success Criteria
+reproducibility | docs/scientific/reproducibility.md | core     | in-place | _doc-format | Environment; Seeds; Data/Code Versioning; Rerun Steps
+methods         | docs/scientific/methods.md         | standard | in-place | _doc-format | Algorithms; Parameters; Assumptions
+validation      | docs/scientific/validation.md      | standard | in-place | _doc-format | Numerical Accuracy; Benchmarks; Error Analysis
+
+# ---------- pack: media (media / streaming) ----------
+media-pipeline | docs/media/pipeline.md   | core     | in-place | _doc-format | Ingest; Encoding/Transcoding; Formats/Codecs; Storage
+delivery       | docs/media/delivery.md   | core     | in-place | _doc-format | Streaming (HLS/DASH); CDN; Adaptive Bitrate; Latency
+rights-drm     | docs/media/rights-drm.md | standard | in-place | _doc-format | Licensing; DRM; Access Control
+
+# ---------- pack: geospatial (GIS / mapping) ----------
+geo-data           | docs/geospatial/data-sources.md       | core     | in-place | _doc-format | Sources; Formats (GeoJSON/Shapefile/raster); Licensing
+coordinate-systems | docs/geospatial/coordinate-systems.md | core     | in-place | _doc-format | CRS/Projections; Datums; Transforms
+spatial-queries    | docs/geospatial/spatial-queries.md    | standard | in-place | _doc-format | Indexing; Queries; Performance
+geo-rendering      | docs/geospatial/rendering.md          | standard | in-place | _doc-format | Tiling; Layers; Styling; Interaction
 ```
 
 ## Discipline → included ids (for build/adopt selection)
@@ -130,3 +225,20 @@ ai-workflow         | docs/ai/ai-workflow.md         | full     | in-place   | _
 - **ops**: env-vars, configuration, error-handling, error-catalog, logging, monitoring, ci-cd, deployment, rollback, backup, dr, runbook, performance, scalability, caching, security, threat-model
 - **ai**: ai-guidelines, ai-coding-rules, ai-context, prompt-library, ai-review-checklist, ai-doc-rules, ai-decision-log, ai-workflow
 - **knowledge (auto)**: readme, brain, registry, docs-index, glossary, onboarding, maintenance, contributing
+
+## Domain packs → included ids (added when the project type matches; see `project-types.md`)
+
+- **ml**: ml-problem, dataset-card, experiments, model-card, ml-evaluation, mlops, responsible-ai
+- **llm**: llm-architecture, prompts, eval-harness, guardrails, rag-sources, cost-latency
+- **security**: sec-architecture, detection-rules, methodology, compliance, sbom, abuse-cases
+- **data**: data-architecture, pipelines, data-quality, lineage, data-governance
+- **game**: gdd, level-design, game-systems, asset-pipeline
+- **hardware**: hardware-spec, firmware, protocols, power-safety
+- **web3**: contracts, contract-audit, tokenomics, gas-deployment
+- **devops**: iac, orchestration, environments, sre-slo, infra-cost
+- **robotics**: robot-architecture, control, perception, robot-safety, robot-simulation
+- **xr**: xr-experience, xr-interaction, comfort-performance, xr-assets
+- **fintech**: payments, ledger, fin-compliance, fraud-risk
+- **scientific**: research-plan, reproducibility, methods, validation
+- **media**: media-pipeline, delivery, rights-drm
+- **geospatial**: geo-data, coordinate-systems, spatial-queries, geo-rendering

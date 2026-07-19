@@ -37,18 +37,21 @@ conversationally to reconstruct the brief's answers first.)
 3. **Fill blanks.** Ask about blank fields with `AskUserQuestion`, ≤4 per call, grouped by topic, most blocking
    first. Keep it short — don't interrogate. Anything still unresolved → `TBD` (recorded in the doc's Open Questions).
 
-4. **Choose disciplines & depth.**
-   - If the brief's "Which disciplines" section names them, use it. If it's `?` or blank, **recommend** based on
-     the project profile and confirm via a multi-select (options: product, project, code, quality, ops, ai;
-     depth: core / standard / full). Pre-check the recommended set. Knowledge docs (readme, brain, registry,
-     docs-index, glossary…) are always included and not shown as a choice.
-   - Default recommendation for a typical solo app: `product, project, code, ops` at `standard`; add `quality`
-     if tests matter, `ai` if AI-assisted development is in play (it usually is here).
+4. **Detect the project type & propose a fitting structure.** Infer the project **type** and **stack** from the
+   brief ("What are you building" + "Tech preferences") using `~/.claude/acta/project-types.md`. Show the detection
+   in 2–3 lines of evidence (`Detected: <type> — signals: …`), then propose the fitted structure via
+   `AskUserQuestion`: the profile's **core disciplines at its depth** PLUS any **domain pack** the type implies
+   (game → game pack; LLM app → llm; ML → ml; security → security; data → data; embedded → hardware; web3 → web3).
+   Pre-check the recommendation. The user can change the type, toggle disciplines/packs, or change depth. If two
+   types are close, show the top two and let them pick. If the brief's "Which disciplines" section overrides,
+   honor it. Knowledge docs (readme, brain, registry, docs-index, glossary…) are always included, not shown as a
+   choice. **This is the whole point — build the structure that fits THIS project, not every possible file.**
 
 5. **Resolve the doc set.** From `doc-catalog.md`, include a doc when **its tier ⊆ chosen depth**
-   (`core` → core only; `standard` → core+standard; `full` → all) AND its discipline was selected (or it's a
-   knowledge/auto doc at a matching tier). Build the final id → path → template list. **Paths and filenames come straight from the
-   catalog exactly as listed — do not invent or re-case them.**
+   (`core` → core only; `standard` → core+standard; `full` → all) AND its discipline OR a selected **domain pack**
+   was chosen (or it's a knowledge/auto doc at a matching tier). Domain-pack docs live under their own `docs/<pack>/`
+   folder (e.g. `docs/game/`, `docs/llm/`). Build the final id → path → template list. **Paths and filenames come
+   straight from the catalog exactly as listed — do not invent or re-case them.**
 
 6. **Generate each doc.** Render with its dedicated `.tmpl` if the catalog names one, else the universal
    `templates/_doc-format.md` using the catalog's section list. Fill from brief/answers/detected code; unknown →
@@ -64,7 +67,9 @@ conversationally to reconstruct the brief's answers first.)
    - **CLAUDE.md** — inject the `templates/CLAUDE-index-block.md.tmpl` block between
      `<!-- acta:index:start -->` / `<!-- acta:index:end -->`. Create CLAUDE.md with a title if missing; replace
      the block if present (idempotent, never duplicated). Fill each discipline bullet with links to that
-     discipline's key generated docs; drop disciplines with no docs.
+     discipline's key generated docs; drop disciplines with no docs. The block **leads with the operating
+     principles** (senior-engineer role, right-sizing, decision-justification) from the template — this is what
+     makes the brain **active**, not a passive index.
    - **.claude/acta.md** — render `templates/registry.md.tmpl`: profile (name/type/stack/stage/brief/depth),
      selected disciplines, and a row per generated doc (status `active` or `tbd`).
    - **docs/README.md** — render `templates/docs-README.md.tmpl`, listing every generated doc grouped by discipline.
@@ -81,4 +86,5 @@ conversationally to reconstruct the brief's answers first.)
 - Idempotent: re-running regenerates the brain/registry/index in place and skips existing docs by default.
 - Anti-bloat: generate concise docs; don't pad. Ongoing growth is `acta-track`'s job and follows growth policies.
 - Link hygiene: cross-link only to docs generated in this run. Never emit a link — or a `TBD (tier)` placeholder — to a doc that was not generated; omit out-of-scope references.
+- Operate by `~/.claude/acta/principles.md`: choose the simplest solution that fits, never force methodologies, and record significant decisions as ADRs.
 - English only. Solo right-sizing: render `(solo-light)` docs in their lightweight form.

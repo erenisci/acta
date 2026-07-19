@@ -24,14 +24,20 @@ English only.
    - Data: schemas, migrations, ORM models → for `db-design`/`erd`.
    - Ops signals: Dockerfile, CI config (`.github/workflows`, etc.), `.env.example` → `env-vars`/`ci-cd`/`deployment`.
    - Tests: presence/kind → `testing-strategy`.
-   Report the detected profile in 3–5 lines before doing anything else.
+   - Domain signals → project **type + pack** via `~/.claude/acta/project-types.md`: PyTorch/scikit/dataset → `ml`;
+     langchain/embeddings/vector store → `llm`; Solidity/Foundry/Hardhat → `web3`; Godot/Unity/Unreal → `game`;
+     firmware/Arduino/ESP32/RTOS → `hardware`; Airflow/dbt/Spark → `data`; scanner/detection/exploit tooling → `security`;
+     Terraform/k8s/Ansible → `devops`; ROS/actuator/SLAM → `robotics`; ARKit/Unity XR → `xr`; Stripe/payments/ledger → `fintech`;
+     simulation/HPC/numerical → `scientific`; ffmpeg/HLS/transcoding → `media`; GIS/GeoJSON/mapping → `geospatial`.
+   Report the detected profile (stack + type) in 3–5 lines before doing anything else.
 
 2. **Inventory existing docs.** Check the filesystem and any `.claude/acta.md` registry for docs that already
    exist (README, `docs/**`, CLAUDE.md, CHANGELOG, ADRs). Build two lists: **present** vs **missing**.
 
-3. **Recommend & confirm the doc set.** From the detected profile, recommend disciplines/depth (e.g. API routes
-   → `api`; migrations → `db-design`, `erd`; CI file → `ci-cd`; tests → `testing-strategy`). Confirm via
-   multi-select (default depth `standard`). Intersect with the **missing** list — you only ever generate missing docs.
+3. **Recommend & confirm the doc set.** From the detected profile, recommend core disciplines/depth (e.g. API routes
+   → `api`; migrations → `db-design`, `erd`; CI file → `ci-cd`; tests → `testing-strategy`) **plus the matching
+   domain pack** for the detected type (e.g. Godot → game pack; langchain → llm pack). Confirm via multi-select
+   (default depth `standard`). Intersect with the **missing** list — you only ever generate missing docs.
 
 4. **Short product intake (optional).** Code reveals *how*, not *why*. Ask ≤4 questions to capture product intent
    (what/for whom/goals) so `PRD`/`arch-overview` aren't hollow. Skippable → those fields become `TBD`.

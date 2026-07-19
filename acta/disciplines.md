@@ -113,4 +113,26 @@ Always present regardless of discipline choice:
 - `docs/onboarding.md`, `docs/maintenance.md` — Standard.
 - `CONTRIBUTING.md` — Full, solo-light.
 
+## Domain packs (project-type gated)
+
+The six disciplines above are the universal **core**. For specialized project types, Acta adds a **domain pack** on
+top — detected from the brief/code via `project-types.md` — instead of forcing every project into the same shape:
+
+- **ml** — datasets, model card, experiments, evaluation, MLOps, responsible-AI
+- **llm** — architecture, prompts, eval-harness, guardrails, RAG sources, cost/latency
+- **security** — security architecture, detection rules, methodology, compliance, SBOM, abuse cases (authorized/defensive)
+- **data** — data architecture, pipelines, data quality, lineage, governance
+- **game** — game design, level design, systems, asset pipeline
+- **hardware** — hardware spec, firmware, protocols, power/safety
+- **web3** — contracts, security audit, tokenomics, gas/deployment
+- **devops** — IaC, orchestration, environments, SRE/SLO, cost
+- **robotics** — architecture, control, perception, safety, simulation
+- **xr** — experience, interaction, comfort/performance, assets
+- **fintech** — payments, ledger, compliance, fraud/risk
+- **scientific** — research plan, reproducibility, methods, validation
+- **media** — pipeline, delivery, rights/DRM
+- **geospatial** — data sources, coordinate systems, spatial queries, rendering
+
+A pack is generated only when its type is selected.
+
 > Exact paths, sections, and growth policies for every doc above are in `doc-catalog.md` — that is the contract.
