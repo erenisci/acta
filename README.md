@@ -96,6 +96,7 @@ And the top of the generated `CLAUDE.md` — **this is what Claude reads before 
 
 ```markdown
 <!-- acta:index:start -->
+
 ## How I work in this project
 
 I work as a senior engineer wearing every hat this one-person project needs (PM, architect, full-stack,
@@ -195,9 +196,9 @@ Filenames follow the common standard: root meta-files (`README.md`, `CHANGELOG.m
 
 Acta is a growing **family** of `acta-*` skills:
 
-- ✅ `acta-brief` · `acta-build` · `acta-track` · `acta-adopt` — the documentation & memory pipeline
+- ✅ `acta-brief` · `acta-build` · `acta-track` · `acta-adopt` · `acta-audit` — the documentation, memory & trust pipeline
 - 🔜 **`acta-design`** — a brand + design-system + marketing layer that reads your Acta docs and both **generates** the work (landing, logo, deck, ads) and produces **Claude Design** prompts + copy — all consistent with the product's source of truth.
-- 💡 Deeper per-domain detection, and an audit/drift check for the memory.
+- 💡 Deeper per-domain detection and code-aware doc filling.
 
 ## Contributing
 

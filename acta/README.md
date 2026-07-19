@@ -1,7 +1,7 @@
 # Acta — shared resources
 
 This folder is **not a skill** (no `SKILL.md`, so it is not a slash command). It is the shared
-single-source-of-truth used by the four `acta-*` skills so their output stays consistent.
+single-source-of-truth used by the `acta-*` skills so their output stays consistent.
 
 ## The Acta family (solo software-engineering doc pipeline)
 
@@ -15,6 +15,7 @@ methodology to a project — and, crucially, wires every produced document into 
 | acta-build | `/acta-build` | after brief filled              | Read brief, ask only real gaps, suggest for `?` fields, generate docs + brain.       |
 | acta-track | `/acta-track` | after finishing a chunk of work | Update all relevant docs to the current state — **without bloating them**.           |
 | acta-adopt | `/acta-adopt` | existing codebase, missing docs | Generate only the **missing** docs from the code; **never overwrite** existing docs. |
+| acta-audit | `/acta-audit` | anytime | **Verify** the memory: doc↔code drift, broken links, stale TBDs, brain/index consistency. Read-only; reports findings. |
 
 ## Brief sign language (used by acta-brief / acta-build)
 
@@ -33,7 +34,7 @@ In any brief field the human may put a single symbol instead of an answer:
 - `brief-template.md` — the `<PROJECT>_BRIEF.md` template, including the sign language explanation.
 - `templates/` — format-critical templates (`_doc-format.md` universal format, plus ADR / CHANGELOG / PRD / RFC / brain block / registry / docs-index).
 
-## Invariants (all four skills obey)
+## Invariants (all skills obey)
 
 1. **Never fabricate.** Unknown value → `TBD`. Never invent facts, versions, or decisions.
 2. **Never overwrite without consent.** Existing doc → offer merge / overwrite / skip (adopt: always skip + report).
@@ -54,5 +55,5 @@ In any brief field the human may put a single symbol instead of an answer:
 ## Paths
 
 - Shared resources (this folder): `~/.claude/acta/`
-- Skills: `~/.claude/skills/acta-brief`, `acta-build`, `acta-track`, `acta-adopt`
+- Skills: `~/.claude/skills/acta-brief`, `acta-build`, `acta-track`, `acta-adopt`, `acta-audit`
 - Per-project state written by the skills: `<project>/.claude/acta.md` (registry) + `<project>/CLAUDE.md` (brain block).
