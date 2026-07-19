@@ -162,14 +162,22 @@ Filling the brief, any field can be a single symbol instead of an answer:
 
 ## Install
 
-Acta is a **Claude Code plugin.** In Claude Code, add the marketplace and install it:
+Acta is a **Claude Code plugin.** Add the marketplace and install it — either from inside Claude Code:
 
 ```
 /plugin marketplace add erenisci/acta
 /plugin install acta@acta
 ```
 
-The `/acta-*` skills register immediately. Update anytime with `/plugin marketplace update acta`.
+…or from your terminal (use this if `/plugin` isn't available in your environment):
+
+```bash
+claude plugin marketplace add erenisci/acta
+claude plugin install acta@acta
+```
+
+The `/acta-*` skills register immediately (start a new session if needed). Verify with `claude plugin list`,
+and update anytime with `claude plugin marketplace update acta`.
 
 ## Quick start
 
