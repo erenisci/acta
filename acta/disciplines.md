@@ -141,9 +141,9 @@ Beyond the six disciplines and the packs, three layers turn a documented project
 are **owned by their own skills** (like the knowledge layer is owned by build/adopt) and written only when the user
 runs them — not offered as build disciplines:
 
-- **design** → `docs/design/` — `acta-design` / `acta-design-prompt` / `acta-design-track` (brand, design-system, messaging).
+- **design** → `docs/design/` — `acta-design` / `acta-design-prompt` (brand, design-system, messaging; synced by `acta-track`).
 - **business** → `docs/business/` — `acta-business` (iterative pricing / unit-economics / projections). Git-ignored by default.
-- **legal** → `docs/legal/` — `acta-legal` / `acta-legal-track` (region-aware briefs; never binding text). Git-ignored by default.
+- **legal** → `docs/legal/` — `acta-legal` / `acta-legal-brief` (region-aware briefs + lawyer handoff; never binding text; synced by `acta-track`). Git-ignored by default.
 
 > Exact paths, sections, and growth policies for every doc above are in `doc-catalog.md` — that is the contract.
 > The skill-owned areas' doc sets live in each skill's `SKILL.md`.

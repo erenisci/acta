@@ -20,9 +20,9 @@ The user forgets; you should not. At natural checkpoints — a finished chunk or
 reached — **proactively suggest the fitting next move**, then let the user decide. Match the suggestion to what
 actually changed:
 
-- Shipped a feature / finished a chunk → `/acta-track` (sync docs, tick the roadmap, add a changelog entry).
-- Changed UI / tokens / components → `/acta-design-track`.
-- Added data fields, vendors, cookies, or a new market → `/acta-legal-track` (raises a lawyer re-review flag).
+- Shipped a feature / finished a chunk → `/acta-track` — it syncs the engineering docs **and** the design & legal
+  layers when they exist: ticks the roadmap, adds a changelog entry, updates the design-system if UI changed, and
+  **raises a lawyer re-review flag** if a change (new cookie, vendor, data field, market) shifted legal exposure.
 - Touched pricing / cost / monetization → `/acta-business`.
 
 And the right **engineering practice for the change, in the right place only**: simplify/refactor after a feature

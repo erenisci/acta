@@ -45,14 +45,14 @@ Run these read-only checks and collect findings. Rank each **🔴 broken · 🟡
 8. **Design consistency** (only if `docs/design/` exists) — the code's real styling vs `design-system.md`: rogue
    colors / spacing / fonts used in code but not in the tokens; components or variants in code missing from
    `components.md`; a drifted styling approach; broken design-system pointers in the brain. Flag them → the fixer is
-   `/acta-design-track`.
+   `/acta-track` (design sync).
 9. **Business consistency** (only if `docs/business/` exists) — a price / plan / tier in the code or config (e.g. a
    Stripe price, a plans table) that disagrees with `pricing.md`; a monetization model in code not reflected in
    `business-model.md`. Flag the drift → the fixer is `/acta-business`. (Read-only; never rewrite pricing.)
 10. **Legal consistency** (only if `docs/legal/` exists) — legal-relevant reality in the code not reflected in the
     briefs: cookies / analytics / trackers with no `consent.md` entry; a data field or vendor / sub-processor absent
     from `data-processing.md`; a market/region served that the briefs' regimes don't cover; open **"⚠️ needs lawyer
-    re-review"** items. Flag them → the fixer is `/acta-legal-track`. (Never write binding legal text or give legal advice.)
+    re-review"** items. Flag them → the fixer is `/acta-track` (legal sync). (Never write binding legal text or give legal advice.)
 
 ## Output
 

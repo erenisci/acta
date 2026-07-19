@@ -56,4 +56,4 @@ no design-system), skipping web/components.
 - Never fabricate a brand asset, hex, or font the user didn't give or approve → `TBD`.
 - Never overwrite existing design docs/code without consent. Anti-bloat: in-place, consolidated, no versioned files.
 - Domain-agnostic. Content in the project's documentation language. Operate by `~/.claude/acta/principles.md`.
-- Turn the docs into Claude Design prompts with `/acta-design-prompt`; keep them in sync with `/acta-design-track`.
+- Turn the docs into Claude Design prompts with `/acta-design-prompt`; keep them in sync with `/acta-track`.

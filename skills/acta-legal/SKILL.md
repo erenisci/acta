@@ -48,5 +48,5 @@ stays local.
 - **Never give legal advice.** State what *generally* applies; the lawyer decides. Always include the disclaimer.
 - **Region-aware.** Regimes follow the users' locations; when in doubt, flag for the user + lawyer, don't guess.
 - **Never fabricate a legal fact** (a retention period, a lawful basis) → `TBD` / ask.
-- Keep it current with `/acta-legal-track` (a product change can create a new legal obligation).
+- Keep it current with `/acta-track` (a product change can create a new legal obligation).
 - Anti-bloat, in-place. Content in the project's documentation language. Operate by `~/.claude/acta/principles.md`.

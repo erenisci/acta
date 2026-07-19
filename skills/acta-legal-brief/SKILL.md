@@ -20,7 +20,7 @@ Write the brief in the project's documentation language (registry `language:`, d
 the language they use. See `~/.claude/acta/principles.md`.
 
 ## Pre-condition
-`docs/legal/` must exist. If not → run `/acta-legal` first (and `/acta-legal-track` to catch recent changes).
+`docs/legal/` must exist. If not → run `/acta-legal` first (and `/acta-track` to catch recent changes).
 
 ## Output — one file: `docs/legal/lawyer-brief.md`
 Regenerated in place each run (never appended). Self-contained, printable, in this order:

@@ -249,9 +249,9 @@ Three areas are **owned by their own skills**, not scaffolded from this catalog.
 created and maintained only when the user runs the relevant skill. `acta-audit` treats them as **valid, not orphans**,
 and only checks them if the folder exists:
 
-- `docs/design/` — owned by `acta-design` / `acta-design-prompt` / `acta-design-track` (brand, design-system, messaging, components).
+- `docs/design/` — owned by `acta-design` / `acta-design-prompt` (brand, design-system, messaging, components); synced by `acta-track`.
 - `docs/business/` — owned by `acta-business` (business-model, pricing, unit-economics, projections, go-to-market, competitors). Git-ignored by default.
-- `docs/legal/` — owned by `acta-legal` / `acta-legal-track` / `acta-legal-brief` (overview, privacy, terms, cookies, consent, data-processing, compliance-checklist, and the consolidated `lawyer-brief.md`). Git-ignored by default.
+- `docs/legal/` — owned by `acta-legal` / `acta-legal-brief` (overview, privacy, terms, cookies, consent, data-processing, compliance-checklist, and the consolidated `lawyer-brief.md`); synced by `acta-track`. Git-ignored by default.
 
 These follow the same invariants (never fabricate, in-place/anti-bloat, project content language) but their exact doc set is defined in
 each skill's `SKILL.md`, not here — because they are conversational/iterative, not a fixed scaffold.
