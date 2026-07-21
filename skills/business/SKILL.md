@@ -1,9 +1,9 @@
 ---
-name: acta-business
-description: Iteratively model pricing, unit economics (LTV/CAC/margin) and best/base/worst projections with real numbers → docs/business/. Not a one-shot generator. Trigger on /acta-business, "model pricing", "unit economics", "revenue projection".
+name: business
+description: Iteratively model pricing, unit economics (LTV/CAC/margin) and best/base/worst projections with real numbers → docs/business/. Not a one-shot generator. Trigger on /acta:business, "model pricing", "unit economics", "revenue projection".
 ---
 
-# acta-business
+# acta:business
 
 The **business brain.** Not a one-shot generator — a **modeling partner you come back to.** Every time you rethink
 pricing, cost, or growth, it reads the current numbers, **sanity-checks the change against unit economics and
@@ -43,4 +43,4 @@ Generate content in the project's documentation language (registry `language:`, 
 - **Never fabricate numbers.** Compute from the user's inputs; unknown → ask / `TBD`. Don't invent CAC, market size, or competitor prices — research them *with* the user.
 - **Global framework.** Keep pricing/economics general; a specific market's tax/currency belongs to the user's own figures, not baked in.
 - Anti-bloat: in-place, consolidated. Content in the project's documentation language. Operate by `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
-- Sensitive by default — `docs/business/` is git-ignored by `acta-build` (see its gitignore block); it's your private strategy.
+- Sensitive by default — `docs/business/` is git-ignored by `acta:build` (see its gitignore block); it's your private strategy.

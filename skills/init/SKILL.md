@@ -1,23 +1,23 @@
 ---
-name: acta-init
-description: Start a new project — create <PROJECT>_BRIEF.md for you to fill (? = suggest, - = skip); asks the doc language. Writes no docs itself. Trigger on /acta-init, "start a project", "create a project brief".
+name: init
+description: Start a new project — create <PROJECT>_BRIEF.md for you to fill (? = suggest, - = skip); asks the doc language. Writes no docs itself. Trigger on /acta:init, "start a project", "create a project brief".
 ---
 
-# acta-init
+# acta:init
 
 The **entry point** for a new project. It produces one file — `<PROJECT>_BRIEF.md` — that captures the human's
-intent as a starting point. It writes nothing else. Once filled, `/acta-build` turns it into real docs + a brain.
+intent as a starting point. It writes nothing else. Once filled, `/acta:build` turns it into real docs + a brain.
 
 Shared resources live at `${CLAUDE_PLUGIN_ROOT}/acta/` (sibling of the `skills/` folder). This skill reads
 `${CLAUDE_PLUGIN_ROOT}/acta/brief-template.md`.
 
 ## Language — two decisions start here
 
-1. **Brief language.** If `/acta-init` opens the conversation, or the user is writing in another language, **ask
+1. **Brief language.** If `/acta:init` opens the conversation, or the user is writing in another language, **ask
    which language the brief should be written in** — propose the language they're already using, and confirm. Default
    English. Write the brief in that language and talk to the user in it.
 2. **Documentation language.** The brief's **final question** (template section 11) asks what language the *generated
-   docs* should be in — it may differ from the brief. You don't answer it; the user does, and `/acta-build` reads it.
+   docs* should be in — it may differ from the brief. You don't answer it; the user does, and `/acta:build` reads it.
 
 Always English regardless of either choice: the `<PROJECT>_BRIEF.md` filename, `acta:` markers, and paths.
 See `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
@@ -43,15 +43,15 @@ See `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
    Created <PROJECT>_BRIEF.md. Fill in what you know; for any field you can instead put:
      ?  → suggest one for me
      -  → skip / unknown / not applicable
-   Leave blanks for anything you want me to ask about. When ready, run /acta-build.
+   Leave blanks for anything you want me to ask about. When ready, run /acta:build.
    ```
 
 ## Rules
 
-- Create **only** the brief file. No `docs/`, no `CLAUDE.md`, no registry — those belong to `/acta-build`.
+- Create **only** the brief file. No `docs/`, no `CLAUDE.md`, no registry — those belong to `/acta:build`.
 - Never invent answers. The template ships empty. The sign language is explained once, at the top of the file —
   do not repeat symbol hints inside individual fields.
 - Idempotent by guard: re-running never silently overwrites an existing brief.
 - If the project already has substantial code (detect `package.json`, `pyproject.toml`, `src/`, `.git`), mention
-  that `/acta-adopt` may fit better (it reverse-engineers docs from code), but still create the brief if asked —
+  that `/acta:adopt` may fit better (it reverse-engineers docs from code), but still create the brief if asked —
   the "why/product" side is worth capturing even for existing code.

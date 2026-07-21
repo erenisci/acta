@@ -1,9 +1,9 @@
 ---
-name: acta-audit
-description: Read-only check that the docs still match the code — drift, dead links, stale TBDs, brain/registry; reports findings (--fix: safe mechanical fixes only). Trigger on /acta-audit, "audit the docs", "check doc drift".
+name: audit
+description: Read-only check that the docs still match the code — drift, dead links, stale TBDs, brain/registry; reports findings (--fix: safe mechanical fixes only). Trigger on /acta:audit, "audit the docs", "check doc drift".
 ---
 
-# acta-audit
+# acta:audit
 
 The **trust check.** Acta's whole value is a trustworthy engineering memory — this verifies the docs haven't drifted
 from reality. **Read-only by default:** it reports; it fixes only mechanical things when asked (`--fix`), and it
@@ -18,7 +18,7 @@ Write findings and any persisted items in the project's documentation language (
 ## Pre-condition
 
 Read `.claude/acta.md` (registry) and `${CLAUDE_PLUGIN_ROOT}/acta/doc-catalog.md`. If there is no registry, this project isn't
-set up with Acta yet → suggest `/acta-build` (greenfield) or `/acta-adopt` (existing code). Don't guess a doc set without them.
+set up with Acta yet → suggest `/acta:build` (greenfield) or `/acta:adopt` (existing code). Don't guess a doc set without them.
 
 ## Checks
 
@@ -45,14 +45,14 @@ Run these read-only checks and collect findings. Rank each **🔴 broken · 🟡
 8. **Design consistency** (only if `docs/design/` exists) — the code's real styling vs `design-system.md`: rogue
    colors / spacing / fonts used in code but not in the tokens; components or variants in code missing from
    `components.md`; a drifted styling approach; broken design-system pointers in the brain. Flag them → the fixer is
-   `/acta-track` (design sync).
+   `/acta:track` (design sync).
 9. **Business consistency** (only if `docs/business/` exists) — a price / plan / tier in the code or config (e.g. a
    Stripe price, a plans table) that disagrees with `pricing.md`; a monetization model in code not reflected in
-   `business-model.md`. Flag the drift → the fixer is `/acta-business`. (Read-only; never rewrite pricing.)
+   `business-model.md`. Flag the drift → the fixer is `/acta:business`. (Read-only; never rewrite pricing.)
 10. **Legal consistency** (only if `docs/legal/` exists) — legal-relevant reality in the code not reflected in the
     briefs: cookies / analytics / trackers with no `consent.md` entry; a data field or vendor / sub-processor absent
     from `data-processing.md`; a market/region served that the briefs' regimes don't cover; open **"⚠️ needs lawyer
-    re-review"** items. Flag them → the fixer is `/acta-track` (legal sync). (Never write binding legal text or give legal advice.)
+    re-review"** items. Flag them → the fixer is `/acta:track` (legal sync). (Never write binding legal text or give legal advice.)
 
 ## Output
 
@@ -64,7 +64,7 @@ Acta audit — <project>
 🟡 Drift/stale (N) : <one line each>
 🔵 Hygiene (N)     : <one line each>
 Clean              : <areas with no findings>
-→ Fix: run /acta-track to re-sync current-state docs; <specific doc> needs <the manual bit only a human can supply>.
+→ Fix: run /acta:track to re-sync current-state docs; <specific doc> needs <the manual bit only a human can supply>.
 ```
 
 If everything passes, say so plainly. **By default the audit writes nothing** — the report is printed; no file is
@@ -75,7 +75,7 @@ created and no file grows.
 Because the report is ephemeral, offer two ways to keep the findings — the user chooses; **nothing is written without
 consent:**
 
-1. **Just re-run `/acta-audit`** next session — it's cheap and reflects the *current* reality, so a real issue is never
+1. **Just re-run `/acta:audit`** next session — it's cheap and reflects the *current* reality, so a real issue is never
    missed (nothing to forget). This is the default.
 2. **Record open items into the living memory** (only if the user wants persistence): one concise line per unresolved
    finding into an **existing** doc — never a separate audit file:
@@ -84,7 +84,7 @@ consent:**
    - a doc's own unknown → that doc's **Open Questions**
 
    These are **bounded, self-cleaning** docs (a snapshot / an open-debt list) linked from the `CLAUDE.md` brain:
-   `acta-track` removes each item once it's fixed, so they track the *current* open set and **shrink as you resolve
+   `acta:track` removes each item once it's fixed, so they track the *current* open set and **shrink as you resolve
    them — never grow without bound.** Anti-bloat: one line per item, dedupe, no audit files.
 
 ## Fixing — only with `--fix`, only the safe mechanical set
@@ -94,7 +94,7 @@ consent:**
 - Remove or correct broken internal links.
 - Refresh `updated:` dates only on docs you actually changed.
 - **NEVER** fabricate content, resolve a contradiction, or fill a `TBD` — those are always reported for the human or
-  for `/acta-track`, never invented.
+  for `/acta:track`, never invented.
 
 ## Rules
 

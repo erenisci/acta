@@ -1,9 +1,9 @@
 ---
-name: acta-build
-description: Turn the filled brief into a project-type-aware doc set plus the CLAUDE.md "brain". Trigger on /acta-build, "build the docs", "generate project docs".
+name: build
+description: Turn the filled brief into a project-type-aware doc set plus the CLAUDE.md "brain". Trigger on /acta:build, "build the docs", "generate project docs".
 ---
 
-# acta-build
+# acta:build
 
 Turns a filled brief into a right-sized documentation set **and a brain** that later Claude sessions use.
 Shared resources at `${CLAUDE_PLUGIN_ROOT}/acta/`: `doc-catalog.md` (the contract), `disciplines.md`, `templates/`.
@@ -17,8 +17,8 @@ the user in the language they use. The filename convention, `acta:` markers, and
 
 Find `<PROJECT>_BRIEF.md` at the project root (any `*_BRIEF.md`). If none exists:
 ```
-No project brief found. Run /acta-init first — it creates <PROJECT>_BRIEF.md for you to fill in.
-(Existing codebase with no docs? /acta-adopt reverse-engineers docs from the code instead.)
+No project brief found. Run /acta:init first — it creates <PROJECT>_BRIEF.md for you to fill in.
+(Existing codebase with no docs? /acta:adopt reverse-engineers docs from the code instead.)
 ```
 Do not proceed without a brief. (If the user insists on going without one, run the questions in step 2/3
 conversationally to reconstruct the brief's answers first.)
@@ -84,14 +84,14 @@ conversationally to reconstruct the brief's answers first.)
 8. **Finish.**
    - Ask what to do with the brief: **archive** (move to `docs/_brief-archive/<PROJECT>_BRIEF.md`) or **delete** or **keep**. Default archive.
    - Print a short summary: disciplines + depth, count of docs created, how many fields landed as `TBD`, and:
-     `Next: build features, then /acta-track to keep these docs current.`
+     `Next: build features, then /acta:track to keep these docs current.`
 
 ## Rules
 
 - Never fabricate. Unknown → `TBD`; surface `TBD` count so the user can revisit.
 - Never overwrite an existing doc/README/CLAUDE content without consent; the brain block is marker-scoped only.
 - Idempotent: re-running regenerates the brain/registry/index in place and skips existing docs by default.
-- Anti-bloat: generate concise docs; don't pad. Ongoing growth is `acta-track`'s job and follows growth policies.
+- Anti-bloat: generate concise docs; don't pad. Ongoing growth is `acta:track`'s job and follows growth policies.
 - Link hygiene: cross-link only to docs generated in this run. Never emit a link — or a `TBD (tier)` placeholder — to a doc that was not generated; omit out-of-scope references.
 - Operate by `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`: choose the simplest solution that fits, never force methodologies, and record significant decisions as ADRs.
 - Generate content in the project's documentation language (registry `language:`, default English); paths/markers stay English. Solo right-sizing: render `(solo-light)` docs in their lightweight form.

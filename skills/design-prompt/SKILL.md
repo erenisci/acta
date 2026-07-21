@@ -1,9 +1,9 @@
 ---
-name: acta-design-prompt
-description: Turn the design docs into paste-ready Claude Design prompts plus the real copy — scope-locked and on-brand. Trigger on /acta-design-prompt, "claude design prompt", "generate a design prompt".
+name: design-prompt
+description: Turn the design docs into paste-ready Claude Design prompts plus the real copy — scope-locked and on-brand. Trigger on /acta:design-prompt, "claude design prompt", "generate a design prompt".
 ---
 
-# acta-design-prompt
+# acta:design-prompt
 
 Turns the project's design source of truth into **paste-ready Claude Design prompts** — and, crucially, the **real
 content/copy** to fill them. Claude Design is great at visuals but weak at content and prone to inventing scope; this
@@ -16,7 +16,7 @@ Shared: `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`. Reads `docs/design/*` and, f
 Write copy and docs in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
 
 ## Pre-condition
-`docs/design/design-system.md` + `messaging.md` must exist. If not → run `/acta-design` first (it establishes them).
+`docs/design/design-system.md` + `messaging.md` must exist. If not → run `/acta:design` first (it establishes them).
 
 ## Flow
 

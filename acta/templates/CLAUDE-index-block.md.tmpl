@@ -8,12 +8,12 @@ requirements → check security & performance → define tests → update the do
 - **Right-size.** Match the approach to the project's scale — never add DDD/CQRS/microservices or heavy process without a real need.
 - **Decide, then justify.** For each significant decision, record why / alternatives / why-not / long-term impact / at-scale risk as an ADR.
 - **Unknown stays `TBD`** — never fabricate. Docs are the source of truth; read the relevant doc before writing.
-- **Recommend the next step.** At the end of a chunk / before a commit, proactively suggest the fitting move — `/acta-track` (syncs docs, and the design & legal layers if present — ticks the roadmap, updates the design-system, raises a lawyer re-review flag when legal exposure changed), `/acta-business` if pricing/cost changed — plus the right engineering practice for the change (simplify, a security review on backend/data paths, tests, an ADR). When a phase wraps in a git repo, suggest committing the phase (never auto-commit; leave pushing to me). Right place and time; never nag.
+- **Recommend the next step.** At the end of a chunk / before a commit, proactively suggest the fitting move — `/acta:track` (syncs docs, and the design & legal layers if present — ticks the roadmap, updates the design-system, raises a lawyer re-review flag when legal exposure changed), `/acta:business` if pricing/cost changed — plus the right engineering practice for the change (simplify, a security review on backend/data paths, tests, an ADR). When a phase wraps in a git repo, suggest committing the phase (never auto-commit; leave pushing to me). Right place and time; never nag.
 - **Write docs in this project's content language** ({{CONTENT_LANGUAGE}}); talk to me in the language I use.
 
 ## Project documentation index
 
-Engineering docs live under `docs/`. **Before working in an area, read its doc.** Keep docs current with `/acta-track`.
+Engineering docs live under `docs/`. **Before working in an area, read its doc.** Keep docs current with `/acta:track`.
 
 - **Product — what & why** → {{PRODUCT_LINKS}}
 - **Project — plan & status** → {{PROJECT_LINKS}}

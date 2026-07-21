@@ -11,24 +11,24 @@ methodology to a project — and, crucially, wires every produced document into 
 
 | Skill      | Slash command | When                            | Job                                                                                  |
 | ---------- | ------------- | ------------------------------- | ------------------------------------------------------------------------------------ |
-| acta-init | `/acta-init` | project start                   | Create `<PROJECT>_BRIEF.md` for the human to fill (with a sign language).            |
-| acta-build | `/acta-build` | after brief filled              | Read brief, ask only real gaps, suggest for `?` fields, generate docs + brain.       |
-| acta-track | `/acta-track` | after finishing a chunk of work | Update all relevant docs to the current state (incl. the **design** + **legal** layers when present) — **without bloating them**. |
-| acta-adopt | `/acta-adopt` | existing codebase, missing docs | Generate only the **missing** docs from the code; **never overwrite** existing docs. |
-| acta-audit | `/acta-audit` | anytime | **Verify** the memory: doc↔code drift, broken links, stale TBDs, brain/index consistency. Read-only; reports findings. |
-| acta-design | `/acta-design` | brand / design | Establish `docs/design/` (brand, design-system, messaging) and **generate real design** (web / logo / deck / ads). |
-| acta-design-prompt | `/acta-design-prompt` | need a Claude Design prompt | Scope-locked, on-brand **Claude Design prompts + the real copy**, straight from the design docs. |
-| acta-business | `/acta-business` | pricing / money | Iterative modeling: pricing, unit economics, best/base/worst projections in `docs/business/`. |
-| acta-legal | `/acta-legal` | before shipping | Region-aware legal briefs (KVKK/GDPR/CCPA/…) — warns you, briefs a lawyer; never binding text. |
-| acta-legal-brief | `/acta-legal-brief` | before meeting a lawyer | Consolidate the separate legal briefs into ONE hand-to-your-lawyer document; never legal advice. |
+| acta:init | `/acta:init` | project start                   | Create `<PROJECT>_BRIEF.md` for the human to fill (with a sign language).            |
+| acta:build | `/acta:build` | after brief filled              | Read brief, ask only real gaps, suggest for `?` fields, generate docs + brain.       |
+| acta:track | `/acta:track` | after finishing a chunk of work | Update all relevant docs to the current state (incl. the **design** + **legal** layers when present) — **without bloating them**. |
+| acta:adopt | `/acta:adopt` | existing codebase, missing docs | Generate only the **missing** docs from the code; **never overwrite** existing docs. |
+| acta:audit | `/acta:audit` | anytime | **Verify** the memory: doc↔code drift, broken links, stale TBDs, brain/index consistency. Read-only; reports findings. |
+| acta:design | `/acta:design` | brand / design | Establish `docs/design/` (brand, design-system, messaging) and **generate real design** (web / logo / deck / ads). |
+| acta:design-prompt | `/acta:design-prompt` | need a Claude Design prompt | Scope-locked, on-brand **Claude Design prompts + the real copy**, straight from the design docs. |
+| acta:business | `/acta:business` | pricing / money | Iterative modeling: pricing, unit economics, best/base/worst projections in `docs/business/`. |
+| acta:legal | `/acta:legal` | before shipping | Region-aware legal briefs (KVKK/GDPR/CCPA/…) — warns you, briefs a lawyer; never binding text. |
+| acta:legal-brief | `/acta:legal-brief` | before meeting a lawyer | Consolidate the separate legal briefs into ONE hand-to-your-lawyer document; never legal advice. |
 
-## Brief sign language (used by acta-init / acta-build)
+## Brief sign language (used by acta:init / acta:build)
 
 In any brief field the human may put a single symbol instead of an answer:
 
-- **`?`** → _suggest one for me_ (acta-build proposes a value, the human confirms).
-- **`-`** → _skip_ (unknown / not applicable; acta-build won't ask).
-- Blank field → a real gap; acta-build asks about it. Plain text → used as-is.
+- **`?`** → _suggest one for me_ (acta:build proposes a value, the human confirms).
+- **`-`** → _skip_ (unknown / not applicable; acta:build won't ask).
+- Blank field → a real gap; acta:build asks about it. Plain text → used as-is.
 
 ## Files here
 
@@ -61,6 +61,6 @@ In any brief field the human may put a single symbol instead of an answer:
 
 - **Acta ships as a Claude Code plugin** (manifest in `.claude-plugin/`). Install with
   `/plugin marketplace add erenisci/acta` → `/plugin install acta@acta`.
-- Skills live in `skills/acta-*`; these shared resources (this folder) in `acta/`. Skills reference them as
+- Skills live in `skills/*`; these shared resources (this folder) in `acta/`. Skills reference them as
   **`${CLAUDE_PLUGIN_ROOT}/acta/...`**, which Claude Code expands to wherever the plugin is installed.
 - Per-project state written by the skills: `<project>/.claude/acta.md` (registry) + `<project>/CLAUDE.md` (brain block).

@@ -1,15 +1,15 @@
 ---
-name: acta-adopt
-description: Existing codebase with few docs — reverse-engineer only the missing ones from the code; never overwrite. Trigger on /acta-adopt, "document this codebase", "backfill docs".
+name: adopt
+description: Existing codebase with few docs — reverse-engineer only the missing ones from the code; never overwrite. Trigger on /acta:adopt, "document this codebase", "backfill docs".
 ---
 
-# acta-adopt
+# acta:adopt
 
 The **backfill**. Point it at a real project that's missing docs and it reverse-engineers a right-sized doc set
 from the code, then builds the brain — **without touching anything that already exists**.
 
 Shared: `${CLAUDE_PLUGIN_ROOT}/acta/` (`doc-catalog.md`, `disciplines.md`, `templates/`). Same catalog/templates as
-`acta-build`, so adopted docs are consistent with built ones. The difference: **source is the code, and the
+`acta:build`, so adopted docs are consistent with built ones. The difference: **source is the code, and the
 overwrite policy is always SKIP.**
 
 ## Language
@@ -52,7 +52,7 @@ Generate content in the project's documentation language (registry `language:`, 
    - `CLAUDE.md`: if absent, create with the index block. If present, inject the marker block; if it already has
      other content, **append** the block once and leave existing content untouched (never rewrite the user's CLAUDE.md prose).
    - `.claude/acta.md`: registry with a row per doc — generated docs `active`; pre-existing docs recorded with
-     status `external` so future `acta-track` knows they exist but weren't authored here.
+     status `external` so future `acta:track` knows they exist but weren't authored here.
    - `docs/README.md`: if absent, generate it; if present, **skip** (report it).
 
 7. **Summary.** Two clear lists:
@@ -65,4 +65,4 @@ Generate content in the project's documentation language (registry `language:`, 
   is safe-by-default on a real project.
 - Never fabricate. Reverse-engineer only what the code supports; everything else is `TBD` or an intake question.
 - Idempotent: re-running only fills newly-missing gaps; already-present docs stay untouched; brain/registry regenerate in place.
-- Content in the project's documentation language (default English). Solo right-sizing applies. After adopt, ongoing updates are `/acta-track`'s job.
+- Content in the project's documentation language (default English). Solo right-sizing applies. After adopt, ongoing updates are `/acta:track`'s job.

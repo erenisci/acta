@@ -1,9 +1,9 @@
 ---
-name: acta-design
-description: Establish docs/design/ (brand, design-system, messaging) and generate real design — web, logo, deck, ads — from the product docs. Trigger on /acta-design, "set up brand", "design system", "generate landing/logo/deck".
+name: design
+description: Establish docs/design/ (brand, design-system, messaging) and generate real design — web, logo, deck, ads — from the product docs. Trigger on /acta:design, "set up brand", "design system", "generate landing/logo/deck".
 ---
 
-# acta-design
+# acta:design
 
 The **design / brand / marketing** layer of Acta. It reads your **product docs** (and any existing code) as the
 source of truth, establishes the project's **design source of truth** under `docs/design/`, and **generates real
@@ -56,4 +56,4 @@ no design-system), skipping web/components.
 - Never fabricate a brand asset, hex, or font the user didn't give or approve → `TBD`.
 - Never overwrite existing design docs/code without consent. Anti-bloat: in-place, consolidated, no versioned files.
 - Domain-agnostic. Content in the project's documentation language. Operate by `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
-- Turn the docs into Claude Design prompts with `/acta-design-prompt`; keep them in sync with `/acta-track`.
+- Turn the docs into Claude Design prompts with `/acta:design-prompt`; keep them in sync with `/acta:track`.

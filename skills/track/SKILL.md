@@ -1,9 +1,9 @@
 ---
-name: acta-track
-description: After finishing work, bring every affected doc to the current state — engineering docs, and the design + legal layers when they exist — in place, no bloat. Trigger on /acta-track, "update the docs", "sync progress", "track".
+name: track
+description: After finishing work, bring every affected doc to the current state — engineering docs, and the design + legal layers when they exist — in place, no bloat. Trigger on /acta:track, "update the docs", "sync progress", "track".
 ---
 
-# acta-track
+# acta:track
 
 The **keeper**. One command reconciles the whole doc set with reality after you've built something — so you never
 have to say "update PRD, then CHANGELOG, then the design-system, then the legal briefs…". Its prime directive is
@@ -17,11 +17,11 @@ Update content in the project's documentation language (registry `language:`, de
 ## Scope
 By default, track syncs **everything that exists** in the project: the engineering docs, and — if the folders are
 present — the **design** layer (`docs/design/`) and the **legal** layer (`docs/legal/`). The user can narrow it:
-`/acta-track docs` · `/acta-track design` · `/acta-track legal`.
+`/acta:track docs` · `/acta:track design` · `/acta:track legal`.
 
 ## Pre-condition
-Read `.claude/acta.md` (the registry). If absent, this project isn't set up with Acta yet → suggest `/acta-build`
-(greenfield) or `/acta-adopt` (existing code). Don't guess a doc set without the registry/catalog.
+Read `.claude/acta.md` (the registry). If absent, this project isn't set up with Acta yet → suggest `/acta:build`
+(greenfield) or `/acta:adopt` (existing code). Don't guess a doc set without the registry/catalog.
 
 ## Flow
 
@@ -36,7 +36,7 @@ Read `.claude/acta.md` (the registry). If absent, this project isn't set up with
    - new endpoints → `api`. schema/migration → `db-design`, `erd`.
    - a real architectural/tech decision → **new ADR** (per-item) + adr index.
    - scope/feature change → `prd`, `roadmap`, `feature-specs`.
-   - pricing / cost / monetization change → note it and suggest `/acta-business` (iterative + sensitive; don't rewrite pricing here).
+   - pricing / cost / monetization change → note it and suggest `/acta:business` (iterative + sensitive; don't rewrite pricing here).
 
 3. **Apply updates by growth policy** (from the catalog):
    - **in-place** (progress, roadmap, prd, standards, api, structure, …): **edit/merge in place.** Replace stale
@@ -63,11 +63,11 @@ Read `.claude/acta.md` (the registry). If absent, this project isn't set up with
      **payments**, or targeting **children** → update `data-processing` / `cookies` / `consent` / `privacy` / `compliance-checklist`.
    - For every change that alters legal exposure, raise a **"⚠️ needs lawyer re-review: <what changed>"** item in
      `compliance-checklist.md`, and surface it in `docs/progress.md` → Blocked and the `CLAUDE.md` legal pointer.
-   - If `docs/legal/lawyer-brief.md` exists, refresh it (or suggest `/acta-legal-brief`) so the handoff stays current.
+   - If `docs/legal/lawyer-brief.md` exists, refresh it (or suggest `/acta:legal-brief`) so the handoff stays current.
 
 7. **Refresh the brain.** Re-inject the `CLAUDE.md` index block (marker-scoped, idempotent), update `docs/README.md`,
    and update the registry rows/dates. Add rows for any docs newly created this run. If a whole new area appeared,
-   offer to generate its missing docs (or point to `/acta-build`).
+   offer to generate its missing docs (or point to `/acta:build`).
 
 8. **Summary.** List exactly which docs were updated and how (edited / appended / new item), and any raised legal
    re-review flags. If nothing changed in a doc, leave it untouched and say so — no churn.

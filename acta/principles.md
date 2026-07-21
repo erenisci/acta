@@ -20,10 +20,10 @@ The user forgets; you should not. At natural checkpoints — a finished chunk or
 reached — **proactively suggest the fitting next move**, then let the user decide. Match the suggestion to what
 actually changed:
 
-- Shipped a feature / finished a chunk → `/acta-track` — it syncs the engineering docs **and** the design & legal
+- Shipped a feature / finished a chunk → `/acta:track` — it syncs the engineering docs **and** the design & legal
   layers when they exist: ticks the roadmap, adds a changelog entry, updates the design-system if UI changed, and
   **raises a lawyer re-review flag** if a change (new cookie, vendor, data field, market) shifted legal exposure.
-- Touched pricing / cost / monetization → `/acta-business`.
+- Touched pricing / cost / monetization → `/acta:business`.
 - **Finished a phase / milestone in a git repo (has a remote)** → after the docs are synced, suggest **committing the
   phase** (a focused commit with a clear message) so history advances phase by phase alongside the docs. **Propose,
   never auto-commit — and don't push;** leave the push to the user (they may want to review or time it themselves).

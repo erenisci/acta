@@ -1,11 +1,11 @@
 ---
-name: acta-legal-brief
-description: Consolidate the separate legal briefs into ONE document to hand to a lawyer — never legal advice. Trigger on /acta-legal-brief, "brief for the lawyer", "prepare for legal counsel".
+name: legal-brief
+description: Consolidate the separate legal briefs into ONE document to hand to a lawyer — never legal advice. Trigger on /acta:legal-brief, "brief for the lawyer", "prepare for legal counsel".
 ---
 
-# acta-legal-brief
+# acta:legal-brief
 
-The **lawyer handoff.** `acta-legal` keeps the legal groundwork as separate briefs (good — each area stays focused),
+The **lawyer handoff.** `acta:legal` keeps the legal groundwork as separate briefs (good — each area stays focused),
 but you can't walk into a lawyer's office with seven files. This produces **one self-contained document** that has
 everything counsel needs to advise you, in the order they'll want it.
 
@@ -20,7 +20,7 @@ Write the brief in the project's documentation language (registry `language:`, d
 the language they use. See `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
 
 ## Pre-condition
-`docs/legal/` must exist. If not → run `/acta-legal` first (and `/acta-track` to catch recent changes).
+`docs/legal/` must exist. If not → run `/acta:legal` first (and `/acta:track` to catch recent changes).
 
 ## Output — one file: `docs/legal/lawyer-brief.md`
 Regenerated in place each run (never appended). Self-contained, printable, in this order:

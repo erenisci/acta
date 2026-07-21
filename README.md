@@ -28,11 +28,11 @@ Acta gives your project a **living memory** and wires it into a `CLAUDE.md` **br
 every session:
 
 ```
-code change → /acta-track → docs updated → brain updated → next session Claude knows
+code change → /acta:track → docs updated → brain updated → next session Claude knows
 ```
 
 - 📝 **Generated, not hand-written** — Acta writes the docs from your project.
-- 🔄 **Always in sync** — `acta-track` keeps them current, so they never rot.
+- 🔄 **Always in sync** — `acta:track` keeps them current, so they never rot.
 - 🧠 **Always loaded** — the brain is read before every decision, not a file you _hope_ gets used.
 - 🎯 **Acts senior** — Claude behaves like a tech lead, not a code vending machine.
 - 💡 **Suggests the next step** — at each checkpoint it recommends the right move (sync docs, security review, legal re-review) — in the right place, never nagging.
@@ -47,28 +47,28 @@ code change → /acta-track → docs updated → brain updated → next session 
 
 ```mermaid
 flowchart LR
-    A["/acta-init"] --> B["you fill<br/>the brief"]
-    B --> C["/acta-build"]
+    A["/acta:init"] --> B["you fill<br/>the brief"]
+    B --> C["/acta:build"]
     C --> D["build<br/>features"]
-    D --> E["/acta-track"]
+    D --> E["/acta:track"]
     E -->|"sync docs, in place"| D
-    F["existing<br/>codebase"] --> G["/acta-adopt"]
+    F["existing<br/>codebase"] --> G["/acta:adopt"]
     G -->|"backfill missing docs"| D
 ```
 
 | Skill             | When                   | What it does                                                     |
 | ----------------- | ---------------------- | ---------------------------------------------------------------- |
-| **`/acta-init`**  | project start          | Creates a short intake you fill with a simple sign language.     |
-| **`/acta-build`** | after the brief        | Detects the project type → fitting docs + the `CLAUDE.md` brain. |
-| **`/acta-track`** | after finishing work   | Brings **all** relevant docs to the current state — no bloat.    |
-| **`/acta-adopt`** | existing code, no docs | Backfills only the **missing** docs. **Never overwrites.**       |
-| **`/acta-audit`** | anytime                | Read-only check that the docs still match the code.              |
+| **`/acta:init`**  | project start          | Creates a short intake you fill with a simple sign language.     |
+| **`/acta:build`** | after the brief        | Detects the project type → fitting docs + the `CLAUDE.md` brain. |
+| **`/acta:track`** | after finishing work   | Brings **all** relevant docs to the current state — no bloat.    |
+| **`/acta:adopt`** | existing code, no docs | Backfills only the **missing** docs. **Never overwrites.**       |
+| **`/acta:audit`** | anytime                | Read-only check that the docs still match the code.              |
 
 ---
 
 ## The brain
 
-`acta-build` writes this to the top of `CLAUDE.md` — **what Claude reads before it writes:**
+`acta:build` writes this to the top of `CLAUDE.md` — **what Claude reads before it writes:**
 
 ```markdown
 <!-- acta:index:start -->
@@ -100,7 +100,7 @@ decisions instead of guessing.
 
 ## What you get
 
-Point `/acta-build` at a project and Acta lays down a **fitting doc tree** — never every possible file:
+Point `/acta:build` at a project and Acta lays down a **fitting doc tree** — never every possible file:
 
 ```text
 CLAUDE.md            # the brain, auto-loaded every session
@@ -128,21 +128,21 @@ It picks from **six core disciplines** (product · project · code · quality ·
 
 Three optional layers ship your product off the **same** source of truth:
 
-🎨 **Design** — `/acta-design` · `/acta-design-prompt`
+🎨 **Design** — `/acta:design` · `/acta:design-prompt`
 Brand, design-system, and real generated design (landing, logo, deck, ads) — plus scope-locked
-[Claude Design](https://claude.ai/design) prompts. Wired into the brain so Claude follows your tokens; `/acta-track` keeps it in sync.
+[Claude Design](https://claude.ai/design) prompts. Wired into the brain so Claude follows your tokens; `/acta:track` keeps it in sync.
 
-💰 **Business** — `/acta-business`
+💰 **Business** — `/acta:business`
 An **iterative** modeling partner (not a one-shot): pricing, unit economics (LTV / CAC / margin), and
 best/base/worst projections with your real numbers. It sanity-checks every change before you commit to it.
 
-⚖️ **Legal** — `/acta-legal` · `/acta-legal-brief`
+⚖️ **Legal** — `/acta:legal` · `/acta:legal-brief`
 **Region-aware** briefs (KVKK, GDPR, CCPA, PIPL, APPI…): it warns _you_ about the risks and briefs a
 _lawyer_ with the facts — but **never writes binding legal text**, and always says _get a lawyer_.
-`/acta-legal-brief` consolidates everything into one document to take to that lawyer, and `/acta-track` flags a
+`/acta:legal-brief` consolidates everything into one document to take to that lawyer, and `/acta:track` flags a
 re-review whenever a change (new cookie, vendor, market) shifts your legal exposure.
 
-> 🔒 Pricing and legal are sensitive, so `acta-build` git-ignores `docs/business/` + `docs/legal/` by default.
+> 🔒 Pricing and legal are sensitive, so `acta:build` git-ignores `docs/business/` + `docs/legal/` by default.
 > Claude still reads them locally — they just never leak to a public repo.
 
 ---
@@ -183,13 +183,13 @@ and update anytime with `claude plugin marketplace update acta`.
 
 ```
 # New project
-/acta-init           # creates PROJECT_BRIEF.md — fill it (? = suggest, - = skip)
-/acta-build          # detects type → docs/ + CLAUDE.md brain
+/acta:init           # creates PROJECT_BRIEF.md — fill it (? = suggest, - = skip)
+/acta:build          # detects type → docs/ + CLAUDE.md brain
 # … build features …
-/acta-track          # keeps every doc current, in one command
+/acta:track          # keeps every doc current, in one command
 
 # Existing codebase, no docs
-/acta-adopt          # generates only the missing docs, never overwrites
+/acta:adopt          # generates only the missing docs, never overwrites
 ```
 
 ---

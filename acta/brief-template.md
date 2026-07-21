@@ -6,8 +6,8 @@
 > - **`?`** → _suggest one for me_ — Claude proposes a value, you confirm.
 > - **`-`** → _skip_ — you don't know or it doesn't apply; Claude won't ask.
 >
-> Blank / untouched fields are treated as real gaps: `/acta-build` will ask about those.
-> When you're done (or done enough), run **`/acta-build`**.
+> Blank / untouched fields are treated as real gaps: `/acta:build` will ask about those.
+> When you're done (or done enough), run **`/acta:build`**.
 
 ---
 

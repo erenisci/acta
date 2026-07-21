@@ -1,6 +1,6 @@
 # Project types — detection & structure profiles
 
-`acta-build` (from the brief) and `acta-adopt` (from the code) read this to **detect what kind of project this is**
+`acta:build` (from the brief) and `acta:adopt` (from the code) read this to **detect what kind of project this is**
 and propose a **fitting structure** — the universal core disciplines at a sensible depth, **plus the matching domain
 pack** — instead of generating every possible doc.
 

@@ -1,15 +1,15 @@
 ---
-name: acta-legal
-description: Region-aware legal briefs (KVKK/GDPR/CCPA/PIPL/APPI…) — warn you, brief a lawyer; never binding legal text, always "get a lawyer". Trigger on /acta-legal, "legal docs", "privacy policy", "GDPR/KVKK".
+name: legal
+description: Region-aware legal briefs (KVKK/GDPR/CCPA/PIPL/APPI…) — warn you, brief a lawyer; never binding legal text, always "get a lawyer". Trigger on /acta:legal, "legal docs", "privacy policy", "GDPR/KVKK".
 ---
 
-# acta-legal
+# acta:legal
 
 The **legal groundwork** — **region-aware**, and honest about its limits. It figures out *which laws apply to your
 users*, warns **you** about the risks, and briefs a **lawyer** with everything they need. It **never writes the
 binding legal text itself** — that's the lawyer's job.
 
-> ⚠️ **Not legal advice.** acta-legal produces *briefings and decision lists*, not enforceable policies. Anything
+> ⚠️ **Not legal advice.** acta:legal produces *briefings and decision lists*, not enforceable policies. Anything
 > user-facing must be reviewed and finalized by a qualified lawyer before you ship.
 
 Shared: `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`. Reads `docs/product/*`, `docs/business/*`, and the code (data, cookies, vendors).
@@ -36,11 +36,11 @@ tracking** · **payments** · target **children** · handle **special data** (he
   (sub-processors, cross-border transfers), retention, admin access, and the open decisions to resolve. (This mirrors
   the proven "lawyer-briefing" pattern — the doc is what the lawyer needs, not a pretend policy.)
 
-**Handoff:** when you're ready to see a lawyer, `/acta-legal-brief` consolidates all of these into one printable
+**Handoff:** when you're ready to see a lawyer, `/acta:legal-brief` consolidates all of these into one printable
 document to take to the meeting.
 
 ## Step 3 — Wire & protect
-Add a "Legal" pointer to `CLAUDE.md` + the docs index. `docs/legal/` is **git-ignored by `acta-build`** — sensitive,
+Add a "Legal" pointer to `CLAUDE.md` + the docs index. `docs/legal/` is **git-ignored by `acta:build`** — sensitive,
 stays local.
 
 ## Rules
@@ -48,5 +48,5 @@ stays local.
 - **Never give legal advice.** State what *generally* applies; the lawyer decides. Always include the disclaimer.
 - **Region-aware.** Regimes follow the users' locations; when in doubt, flag for the user + lawyer, don't guess.
 - **Never fabricate a legal fact** (a retention period, a lawful basis) → `TBD` / ask.
-- Keep it current with `/acta-track` (a product change can create a new legal obligation).
+- Keep it current with `/acta:track` (a product change can create a new legal obligation).
 - Anti-bloat, in-place. Content in the project's documentation language. Operate by `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
