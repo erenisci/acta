@@ -24,6 +24,9 @@ actually changed:
   layers when they exist: ticks the roadmap, adds a changelog entry, updates the design-system if UI changed, and
   **raises a lawyer re-review flag** if a change (new cookie, vendor, data field, market) shifted legal exposure.
 - Touched pricing / cost / monetization → `/acta-business`.
+- **Finished a phase / milestone in a git repo (has a remote)** → after the docs are synced, suggest **committing the
+  phase** (a focused commit with a clear message) so history advances phase by phase alongside the docs. **Propose,
+  never auto-commit — and don't push;** leave the push to the user (they may want to review or time it themselves).
 
 And the right **engineering practice for the change, in the right place only**: simplify/refactor after a feature
 lands, a security review on backend / auth / data paths (not on a static frontend), tests for new logic, an ADR for

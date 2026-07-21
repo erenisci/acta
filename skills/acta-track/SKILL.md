@@ -72,6 +72,10 @@ Read `.claude/acta.md` (the registry). If absent, this project isn't set up with
 8. **Summary.** List exactly which docs were updated and how (edited / appended / new item), and any raised legal
    re-review flags. If nothing changed in a doc, leave it untouched and say so — no churn.
 
+9. **Offer a phase commit (git repos with a remote).** If this run wrapped a phase/milestone and the repo has a git
+   remote, **suggest committing** the phase now (docs + code together, focused message) so history advances phase by
+   phase. **Propose only — never auto-commit, and don't push;** the user commits/pushes on their own call.
+
 ## Rules (anti-bloat is non-negotiable)
 
 - Prefer editing over adding. Refresh `updated:` only on docs you actually changed.
