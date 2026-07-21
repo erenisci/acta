@@ -112,6 +112,7 @@ Always present regardless of discipline choice:
 - `docs/glossary.md` — shared glossary.
 - `docs/onboarding.md`, `docs/maintenance.md` — Standard.
 - `CONTRIBUTING.md` — Full, solo-light.
+- `SCRATCH.md` (root) — Acta-managed working scratchpad (🔴🟡🔵) for in-flight bugs/changes; `acta:track` drains it into permanent docs; git-ignored, do-not-hand-delete.
 
 ## Domain packs (project-type gated)
 

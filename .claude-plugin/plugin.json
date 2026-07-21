@@ -1,7 +1,7 @@
 {
   "name": "acta",
   "description": "The engineering memory for Claude Code — generates living docs + a CLAUDE.md brain Claude reads before it writes, and keeps design, business & legal in sync with your code.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": {
     "name": "erenisci",
     "url": "https://github.com/erenisci"

@@ -28,6 +28,7 @@ Read `.claude/acta.md` (the registry). If absent, this project isn't set up with
 1. **Gather what changed.** In priority order:
    - If a git repo: `git log`/`git diff` since the registry's last-updated (new files, deps, endpoints, migrations, styling, vendors).
    - Recently modified source files and config.
+   - **Read root `SCRATCH.md`** — the jotted 🔴🟡🔵 notes (in-flight bugs / needed changes) are inputs for what to update.
    - Ask the user one open question if intent is unclear: _"What did you finish since last track?"_ (≤1 question).
 
 2. **Map changes → docs** via the catalog. Only touch docs that are actually affected. Typical mappings:
@@ -65,16 +66,25 @@ Read `.claude/acta.md` (the registry). If absent, this project isn't set up with
      `compliance-checklist.md`, and surface it in `docs/progress.md` → Blocked and the `CLAUDE.md` legal pointer.
    - If `docs/legal/lawyer-brief.md` exists, refresh it (or suggest `/acta:legal-brief`) so the handoff stays current.
 
-7. **Refresh the brain.** Re-inject the `CLAUDE.md` index block (marker-scoped, idempotent), update `docs/README.md`,
+7. **Drain `SCRATCH.md`** (the Acta-managed scratchpad; skip if absent). For each jotted note (🔴🟡🔵):
+   - if the work this run **resolved** it → remove it;
+   - if it still needs to persist → **relocate it into the right permanent doc FIRST**, then remove it from SCRATCH:
+     a real bug/debt → `tech-debt` (TD-N) or `progress` → Blocked / Next Up; a decision → a new **ADR**; a spec change
+     → `prd` / `feature-specs`.
+   - **Never delete a note without relocating anything worth keeping — context must never be lost.** Leave `SCRATCH.md`
+     clean (keep its header/legend); the user never hand-deletes it.
+
+8. **Refresh the brain.** Re-inject the `CLAUDE.md` index block (marker-scoped, idempotent), update `docs/README.md`,
    and update the registry rows/dates. Add rows for any docs newly created this run. If a whole new area appeared,
    offer to generate its missing docs (or point to `/acta:build`).
 
-8. **Summary.** List exactly which docs were updated and how (edited / appended / new item), and any raised legal
-   re-review flags. If nothing changed in a doc, leave it untouched and say so — no churn.
+9. **Summary.** List exactly which docs were updated and how (edited / appended / new item), which SCRATCH notes were
+   drained (resolved / relocated where), and any raised legal re-review flags. If nothing changed in a doc, leave it
+   untouched and say so — no churn.
 
-9. **Offer a phase commit (git repos with a remote).** If this run wrapped a phase/milestone and the repo has a git
-   remote, **suggest committing** the phase now (docs + code together, focused message) so history advances phase by
-   phase. **Propose only — never auto-commit, and don't push;** the user commits/pushes on their own call.
+10. **Offer a phase commit (git repos with a remote).** If this run wrapped a phase/milestone and the repo has a git
+    remote, **suggest committing** the phase now (docs + code together, focused message) so history advances phase by
+    phase. **Propose only — never auto-commit, and don't push;** the user commits/pushes on their own call.
 
 ## Rules (anti-bloat is non-negotiable)
 

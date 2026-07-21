@@ -64,6 +64,8 @@ conversationally to reconstruct the brief's answers first.)
      from `ADR.md.tmpl` capturing the initial stack/architecture decision (TBD where unknown).
    - `readme`: create root `README.md` from `README.md.tmpl` **only if absent**; never overwrite an existing README.
    - `changelog`: create root `CHANGELOG.md` from `CHANGELOG.md.tmpl` if absent.
+   - `scratch`: create root `SCRATCH.md` from `SCRATCH.md.tmpl` **only if absent** (never overwrite existing notes) —
+     the Acta-managed working scratchpad (🔴🟡🔵) that `/acta:track` drains into permanent docs.
 
 7. **Write the brain (the whole point).**
    - **CLAUDE.md** — inject the `templates/CLAUDE-index-block.md.tmpl` block between
@@ -78,8 +80,9 @@ conversationally to reconstruct the brief's answers first.)
    - **.gitignore** — add/refresh a marker-scoped block (`# acta:gitignore:start` … `# acta:gitignore:end`) that keeps
      **sensitive doc areas local** — a solo builder's pricing, margins, and legal briefs shouldn't leak to a public
      repo (Claude still reads them locally). Ignore `docs/business/` and `docs/legal/` by default; list the other
-     `docs/<area>/` as **commented toggles** the user can flip; keep `docs/README.md` and `CLAUDE.md` tracked. Create
-     `.gitignore` if absent; idempotent (never duplicate the block).
+     `docs/<area>/` as **commented toggles** the user can flip; keep `docs/README.md` and `CLAUDE.md` tracked. Add
+     **`SCRATCH.md` at the bottom** of the block (a local scratchpad, never committed). Create `.gitignore` if absent;
+     idempotent (never duplicate the block).
 
 8. **Finish.**
    - Ask what to do with the brief: **archive** (move to `docs/_brief-archive/<PROJECT>_BRIEF.md`) or **delete** or **keep**. Default archive.

@@ -37,7 +37,7 @@ In any brief field the human may put a single symbol instead of an answer:
 - `project-types.md` — project-type detection profiles → core disciplines + the matching domain pack.
 - `principles.md` — Acta's operating principles (senior-engineer role, right-sizing, decision-justification) injected into each project's brain.
 - `brief-template.md` — the `<PROJECT>_BRIEF.md` template, including the sign language explanation.
-- `templates/` — format-critical templates (`_doc-format.md` universal format, plus ADR / CHANGELOG / PRD / RFC / brain block / registry / docs-index).
+- `templates/` — format-critical templates (`_doc-format.md` universal format, plus ADR / CHANGELOG / PRD / RFC / brain block / registry / docs-index / SCRATCH).
 
 ## Invariants (all skills obey)
 

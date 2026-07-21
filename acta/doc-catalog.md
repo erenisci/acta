@@ -46,6 +46,7 @@ glossary      | docs/glossary.md         | core     | in-place   | _doc-format  
 onboarding    | docs/onboarding.md       | standard | in-place   | _doc-format                          | Prerequisites; Setup; First Run; Where Things Live; Common Tasks
 maintenance   | docs/maintenance.md      | standard | in-place   | _doc-format                          | Routine Tasks; Dependencies; Upgrades; Troubleshooting
 contributing  | CONTRIBUTING.md          | full     | in-place   | _doc-format                          | How to Propose Changes; Standards; Checks (solo-light)
+scratch       | SCRATCH.md               | core     | in-place   | templates/SCRATCH.md.tmpl            | Working scratchpad (🔴🟡🔵) for in-flight bugs/changes; /acta:track DRAINS it into permanent docs; do-not-hand-delete; git-ignored (create if absent, never overwrite notes)
 
 # ---------- product ----------
 prd            | docs/product/prd.md                     | core     | in-place | templates/PRD.md.tmpl | Problem; Goals; Non-Goals; Target Users; Scope (v1); Success Metrics; Assumptions; Open Questions
@@ -224,7 +225,7 @@ geo-rendering      | docs/geospatial/rendering.md          | standard | in-place
 - **quality**: testing-strategy, unit-testing, integration-testing, e2e-testing, qa-checklist
 - **ops**: env-vars, configuration, error-handling, error-catalog, logging, monitoring, ci-cd, deployment, rollback, backup, dr, runbook, performance, scalability, caching, security, threat-model
 - **ai**: ai-guidelines, ai-coding-rules, ai-context, prompt-library, ai-review-checklist, ai-doc-rules, ai-decision-log, ai-workflow
-- **knowledge (auto)**: readme, brain, registry, docs-index, glossary, onboarding, maintenance, contributing
+- **knowledge (auto)**: readme, brain, registry, docs-index, glossary, onboarding, maintenance, contributing, scratch
 
 ## Domain packs → included ids (added when the project type matches; see `project-types.md`)
 
