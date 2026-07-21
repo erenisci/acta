@@ -1,7 +1,7 @@
 # Acta — shared resources
 
 This folder is **not a skill** (no `SKILL.md`, so it is not a slash command). It is the shared
-single-source-of-truth used by the `acta-*` skills so their output stays consistent.
+single-source-of-truth used by the `acta:*` skills so their output stays consistent.
 
 ## The Acta family (solo software-engineering doc pipeline)
 

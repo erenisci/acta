@@ -176,7 +176,7 @@ claude plugin marketplace add erenisci/acta
 claude plugin install acta@acta
 ```
 
-The `/acta-*` skills register immediately (start a new session if needed). Verify with `claude plugin list`,
+The `acta:*` skills register immediately (start a new session if needed). Verify with `claude plugin list`,
 and update anytime with `claude plugin marketplace update acta`.
 
 ## Quick start

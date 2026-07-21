@@ -1,6 +1,6 @@
 # Document catalog — the contract
 
-Every `acta-*` skill reads this. It lists, for each document: its **path**, **discipline**, **tier**,
+Every `acta:*` skill reads this. It lists, for each document: its **path**, **discipline**, **tier**,
 **growth policy**, its **template** (or `_doc-format`), and its **sections** (the H2 headings).
 
 > The catalog data lives in a fenced `text` code block on purpose: this file is a machine-read contract, and a
