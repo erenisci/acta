@@ -42,10 +42,15 @@ Run these read-only checks and collect findings. Rank each **🔴 broken · 🟡
    areas" note).
 7. **Anti-bloat** — `in-place` docs that have grown append-only (e.g. `PROGRESS.md` accumulating dated log lines
    instead of a snapshot); oversized docs that should be consolidated per their growth policy.
-8. **Design consistency** (only if `docs/design/` exists) — the code's real styling vs `design-system.md`: rogue
-   colors / spacing / fonts used in code but not in the tokens; components or variants in code missing from
-   `components.md`; a drifted styling approach; broken design-system pointers in the brain. Flag them → the fixer is
-   `/acta:track` (design sync).
+8. **Design consistency** (only if `docs/design/` exists) — the code's real styling vs the design doc-base:
+   - rogue colors / spacing / fonts / type used in code but not in `tokens.md` (and its granular docs — `color.md`,
+     `typography.md`, `spacing-layout.md`, `motion.md` — where present); a drifted styling **approach** vs `design-system.md`.
+   - components or variants/states in code missing from `components.md`.
+   - **DDR integrity** (full tier): `docs/design/decisions/README.md` index matches the files on disk; no DDR points
+     to a superseding DDR that doesn't exist.
+   - a broken or missing **`{{DESIGN_LINKS}}`** block in the brain (design docs exist but the "Design & brand" bullet
+     is absent or its links don't resolve).
+   Flag them → the fixer is `/acta:track` (design sync).
 9. **Business consistency** (only if `docs/business/` exists) — a price / plan / tier in the code or config (e.g. a
    Stripe price, a plans table) that disagrees with `pricing.md`; a monetization model in code not reflected in
    `business-model.md`. Flag the drift → the fixer is `/acta:business`. (Read-only; never rewrite pricing.)

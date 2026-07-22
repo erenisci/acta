@@ -88,6 +88,9 @@ conversationally to reconstruct the brief's answers first.)
    - Ask what to do with the brief: **archive** (move to `docs/_brief-archive/<PROJECT>_BRIEF.md`) or **delete** or **keep**. Default archive.
    - Print a short summary: disciplines + depth, count of docs created, how many fields landed as `TBD`, and:
      `Next: build features, then /acta:track to keep these docs current.`
+   - **Point to the product-shipping layers** (one line, not pushy) — they're off by default and skill-owned:
+     `/acta:design` (brand + design-system), `/acta:business` (pricing + unit economics), `/acta:legal` (region-aware
+     briefs). Suggest the ones that fit the detected type — e.g. a UI app → design; a paid product → business + legal.
 
 ## Rules
 

@@ -52,11 +52,17 @@ Read `.claude/acta.md` (the registry). If absent, this project isn't set up with
    - Update `Current Status`, `In Progress`, `Next Up`, `Blocked` to reflect _now_.
    - Keep `Done (recent)` to the last ~10 items; older completed work lives in CHANGELOG, not here.
 
-5. **Design sync** — only if `docs/design/` exists (skip otherwise). Bring `docs/design/` back in line with the real
-   styling, **in place, no bloat** (docs mirror the code, not history):
-   - new/changed **token** (color / spacing / typography / radius) → update the tokens block in `design-system.md`.
-   - new **component / variant / state** → update `components.md`. Changed **approach** (e.g. CSS → Tailwind) → the Approach section.
-   - new recurring **copy** → `messaging.md`. **Remove entries no longer in the code.** Refresh the design pointer in the brain.
+5. **Design sync** — only if `docs/design/` exists (skip otherwise). Bring the design doc-base back in line with the
+   real styling, **in place, no bloat** (docs mirror the code, not history). Only touch the docs that exist at this
+   project's tier:
+   - new/changed **token** (color / spacing / typography / radius / elevation / motion) → update the fenced block in
+     `tokens.md` (and the matching granular doc if present: `color.md` / `typography.md` / `spacing-layout.md` / `motion.md`).
+   - new **component / variant / state** → `components.md`. Changed **approach** (e.g. CSS → Tailwind) → the Approach section of `design-system.md`.
+   - new **icon/imagery** convention → `iconography.md` / `imagery.md`. New **flow/screen** → `ux-flows.md`. New a11y rule → `accessibility.md`.
+   - new recurring **copy** → `messaging.md` (tone/terminology → `content-style-guide.md`). **Remove entries no longer in the code.**
+   - a real, hard-to-reverse **design decision** (new palette / typeface / spacing character) → new **DDR**
+     (`docs/design/decisions/NNNN-*.md`, per-item) + its index, if the project uses the full tier.
+   - Refresh `docs/design/README.md` and the **`{{DESIGN_LINKS}}`** block in the brain.
 
 6. **Legal sync** — only if `docs/legal/` exists (skip otherwise). Scan for **legal-relevant** changes and update the
    briefs in place — **never write binding legal text or give legal advice:**

@@ -129,8 +129,10 @@ It picks from **six core disciplines** (product · project · code · quality ·
 Three optional layers ship your product off the **same** source of truth:
 
 🎨 **Design** — `/acta:design` · `/acta:design-prompt`
-Brand, design-system, and real generated design (landing, logo, deck, ads) — plus scope-locked
-[Claude Design](https://claude.ai/design) prompts. Wired into the brain so Claude follows your tokens; `/acta:track` keeps it in sync.
+A **tiered senior-designer doc-base**: brand, design-principles, design-system, `tokens.md`, messaging, components —
+and, deeper, typography/color/spacing/motion/accessibility plus **DDR** design-decision records. From it, real
+generated design (landing, logo, deck, ads) and scope-locked [Claude Design](https://claude.ai/design) prompts. Wired
+into the brain so Claude follows your tokens; `/acta:track` keeps it in sync.
 
 💰 **Business** — `/acta:business`
 An **iterative** modeling partner (not a one-shot): pricing, unit economics (LTV / CAC / margin), and

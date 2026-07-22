@@ -215,6 +215,36 @@ geo-data           | docs/geospatial/data-sources.md       | core     | in-place
 coordinate-systems | docs/geospatial/coordinate-systems.md | core     | in-place | _doc-format | CRS/Projections; Datums; Transforms
 spatial-queries    | docs/geospatial/spatial-queries.md    | standard | in-place | _doc-format | Indexing; Queries; Performance
 geo-rendering      | docs/geospatial/rendering.md          | standard | in-place | _doc-format | Tiling; Layers; Styling; Interaction
+
+# ========== SKILL-OWNED LAYER: design (owned by acta:design / acta:design-prompt; NOT built from disciplines) ==========
+# Listed here so acta:audit knows the paths/sections and treats them as valid, not orphans. Generated only when the
+# user runs acta:design — tiered like the disciplines (core/standard/full). A non-UI project gets only brand +
+# design-principles + messaging (light or no design-system); web/components/visual docs are skipped.
+brand              | docs/design/brand.md                 | core     | in-place   | _doc-format      | Identity; Positioning; Voice & Tone; Mood/Character; Audience
+design-principles  | docs/design/design-principles.md     | core     | in-place   | _doc-format      | Principles; Do; Don't; Priorities (what wins when they conflict)
+design-system      | docs/design/design-system.md         | core     | in-place   | _doc-format      | Approach (detected, not dictated); How To Use; Rules (states/variants/reuse); Index of design docs
+tokens             | docs/design/tokens.md                | core     | in-place   | _doc-format      | Tokens (color / typography / spacing / radius / elevation / motion in ONE fenced `text` block — formatter-proof)
+messaging          | docs/design/messaging.md             | core     | in-place   | _doc-format      | Voice; Taglines; Value Props; Section Copy; CTA Copy; FAQ Copy
+components         | docs/design/components.md            | core     | in-place   | _doc-format      | Inventory (per component: variants; states hover/focus/disabled; usage)
+typography         | docs/design/typography.md            | standard | in-place   | _doc-format      | Families; Type Scale; Weights; Line-height/Tracking; Usage
+color              | docs/design/color.md                 | standard | in-place   | _doc-format      | Palette; Semantic Roles; State Colors; Contrast Pairings; Dark Mode
+spacing-layout     | docs/design/spacing-layout.md        | standard | in-place   | _doc-format      | Spacing Scale; Grid; Breakpoints; Layout Patterns; Density
+iconography        | docs/design/iconography.md           | standard | in-place   | _doc-format      | Icon Set/Source; Sizing; Style; Usage; Do/Don't
+imagery            | docs/design/imagery.md               | standard | in-place   | _doc-format      | Photography/Illustration Style; Treatment; Aspect Ratios; Do/Don't
+motion             | docs/design/motion.md                | standard | in-place   | _doc-format      | Principles; Durations; Easing; What Animates; Reduced-Motion
+accessibility      | docs/design/accessibility.md         | standard | in-place   | _doc-format      | Contrast (WCAG AA); Focus; Keyboard; Reduced-Motion; ARIA Patterns; Targets
+content-style      | docs/design/content-style-guide.md   | standard | in-place   | _doc-format      | Grammar; Capitalization; Terminology; Numbers/Dates; Tone Rules
+ux-flows           | docs/design/ux-flows.md              | standard | in-place   | _doc-format      | Information Architecture; Key Flows; Screens; States (empty/loading/error)
+references         | docs/design/references.md            | standard | in-place   | _doc-format      | Reference Sites/Images; What To Borrow (layout/feel only); Moodboard; Anti-references
+ddr                | docs/design/decisions/NNNN-*.md      | full     | per-item   | templates/DDR.md.tmpl | Status; Context; Decision; Consequences (also maintain docs/design/decisions/README.md index)
+design-qa          | docs/design/design-qa-checklist.md   | full     | in-place   | _doc-format      | Visual QA; Interaction QA; Responsive; Accessibility; Cross-surface Consistency
+design-index       | docs/design/README.md                | core     | regenerate | templates/docs-README.md.tmpl | Index of all design docs by tier
+# Surfaces (generated on request; the live preview is a real Artifact, spec saved here):
+surface-web        | docs/design/web.md                   | full     | in-place   | _doc-format      | Sections/Screens; Content; Layout; States (spec for the generated web Artifact)
+surface-logo       | docs/design/logo.md                  | full     | in-place   | _doc-format      | Concept; Variants (mark/wordmark); Clearspace; Sizing; Color (spec for the generated logo Artifact)
+surface-deck       | docs/design/deck.md                  | full     | in-place   | _doc-format      | Narrative; Slides; Layout; Content (spec for the generated deck Artifact)
+surface-ads        | docs/design/ads.md                   | full     | in-place   | _doc-format      | Formats/Sizes; Message; Layout; Copy (spec for the generated ads Artifact)
+surface-og         | docs/design/og-image.md              | full     | in-place   | _doc-format      | Dimensions; Layout; Copy; Brand Marks (spec for the generated og-image Artifact)
 ```
 
 ## Discipline → included ids (for build/adopt selection)
@@ -250,7 +280,12 @@ Three areas are **owned by their own skills**, not scaffolded from this catalog.
 created and maintained only when the user runs the relevant skill. `acta:audit` treats them as **valid, not orphans**,
 and only checks them if the folder exists:
 
-- `docs/design/` — owned by `acta:design` / `acta:design-prompt` (brand, design-system, messaging, components); synced by `acta:track`.
+- `docs/design/` — owned by `acta:design` / `acta:design-prompt`. A **tiered senior-designer doc-base** (rows above,
+  under "SKILL-OWNED LAYER: design"): core (brand, design-principles, design-system, tokens, messaging, components,
+  README index), standard (typography, color, spacing-layout, iconography, imagery, motion, accessibility,
+  content-style-guide, ux-flows, references), full (DDR decision records under `docs/design/decisions/`, design-qa
+  checklist) + on-request surface specs (web/logo/deck/ads/og-image). Synced by `acta:track`; wired into the brain via
+  the `{{DESIGN_LINKS}}` index block.
 - `docs/business/` — owned by `acta:business` (business-model, pricing, unit-economics, projections, go-to-market, competitors). Git-ignored by default.
 - `docs/legal/` — owned by `acta:legal` / `acta:legal-brief` (overview, privacy, terms, cookies, consent, data-processing, compliance-checklist, and the consolidated `lawyer-brief.md`); synced by `acta:track`. Git-ignored by default.
 

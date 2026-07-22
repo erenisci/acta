@@ -142,9 +142,38 @@ Beyond the six disciplines and the packs, three layers turn a documented project
 are **owned by their own skills** (like the knowledge layer is owned by build/adopt) and written only when the user
 runs them — not offered as build disciplines:
 
-- **design** → `docs/design/` — `acta:design` / `acta:design-prompt` (brand, design-system, messaging; synced by `acta:track`).
+- **design** → `docs/design/` — `acta:design` / `acta:design-prompt`. A **tiered senior-designer doc-base** (below),
+  wired into the brain via `{{DESIGN_LINKS}}`; synced by `acta:track`.
 - **business** → `docs/business/` — `acta:business` (iterative pricing / unit-economics / projections). Git-ignored by default.
 - **legal** → `docs/legal/` — `acta:legal` / `acta:legal-brief` (region-aware briefs + lawyer handoff; never binding text; synced by `acta:track`). Git-ignored by default.
+
+### design doc-base (skill-owned, tiered like the disciplines)
+
+Established by `acta:design`. Same Core / Standard / Full tiering — a non-UI project (CLI, library, backend) gets only
+the italicized minimum (brand + design-principles + messaging), skipping the visual/UI docs.
+
+| Doc                                                | Tier     |
+| -------------------------------------------------- | -------- |
+| *Brand* (identity, positioning, voice, mood)       | Core     |
+| *Design Principles*                                | Core     |
+| Design System (approach + rules + index)           | Core     |
+| Design Tokens (color/type/spacing/radius/motion)   | Core     |
+| *Messaging* (copy source of truth)                 | Core     |
+| Components (inventory: variants, states)           | Core     |
+| Design README (folder index)                       | Core     |
+| Typography                                         | Standard |
+| Color                                              | Standard |
+| Spacing & Layout                                   | Standard |
+| Iconography                                        | Standard |
+| Imagery                                            | Standard |
+| Motion                                             | Standard |
+| Accessibility                                      | Standard |
+| Content Style Guide                                | Standard |
+| UX Flows / Information Architecture                | Standard |
+| References / Moodboard                             | Standard |
+| Design Decision Records (DDR, per-item)            | Full     |
+| Design QA Checklist                                | Full     |
+| Surface specs (web/logo/deck/ads/og-image)         | on request |
 
 > Exact paths, sections, and growth policies for every doc above are in `doc-catalog.md` — that is the contract.
 > The skill-owned areas' doc sets live in each skill's `SKILL.md`.

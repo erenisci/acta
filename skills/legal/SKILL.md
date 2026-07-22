@@ -40,8 +40,9 @@ tracking** · **payments** · target **children** · handle **special data** (he
 document to take to the meeting.
 
 ## Step 3 — Wire & protect
-Add a "Legal" pointer to `CLAUDE.md` + the docs index. `docs/legal/` is **git-ignored by `acta:build`** — sensitive,
-stays local.
+Refresh the **`{{LEGAL_LINKS}}`** ("Legal & compliance") block in `CLAUDE.md` (marker-scoped) → `overview.md`,
+`privacy.md`, `compliance-checklist.md` — plus the docs index. `docs/legal/` is **git-ignored by `acta:build`** —
+sensitive, stays local.
 
 ## Rules
 - **Never write binding legal text.** No fake privacy policy / ToS. Briefs + decisions + "see a lawyer" only.

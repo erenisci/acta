@@ -1,6 +1,6 @@
 ---
 name: design
-description: Establish docs/design/ (brand, design-system, messaging) and generate real design — web, logo, deck, ads — from the product docs. Trigger on /acta:design, "set up brand", "design system", "generate landing/logo/deck".
+description: Establish a tiered senior-designer doc-base in docs/design/ (brand, design-principles, design-system, tokens, messaging, components + standard/full docs and DDR decision records) and generate real design — web, logo, deck, ads — from the product docs. Trigger on /acta:design, "set up brand", "design system", "generate landing/logo/deck".
 ---
 
 # acta:design
@@ -17,20 +17,41 @@ Generate content in the project's documentation language (registry `language:`, 
 
 ## What it establishes — `docs/design/`
 
-- `brand.md` — identity, positioning, voice/tone, mood (derived from `docs/product`: PRD, target users, positioning).
-- `design-system.md` — the project's **actual** visual language, **not a fixed template**:
-  - **Approach** — how styling is done here: **detected from the code** if it exists (Tailwind / CSS Modules /
-    styled-components / vanilla CSS / a design language), or **decided with you** if greenfield. Never dictate Tailwind by default.
-  - **Tokens** — color / typography / spacing / radius / elevation, in a fenced `text` token block (formatter-proof).
-  - **Rules** — whatever THIS project needs to stay consistent (component reuse, states: hover/focus/disabled,
-    variants, do/don't). **Captured, not prescribed.**
-  - **Accessibility** — contrast, motion, focus.
+A **tiered senior-designer doc-base** (like the engineering disciplines: core / standard / full), not a flat four
+files. The full catalog (paths, sections, growth) is in `${CLAUDE_PLUGIN_ROOT}/acta/doc-catalog.md` under
+"SKILL-OWNED LAYER: design". Right-size the tier to the project — offer core pre-checked, standard when there's real
+UI/deployment, full when the project is large/long-lived.
+
+**Core** (every design project):
+- `brand.md` — identity, positioning, voice/tone, mood, audience (derived from `docs/product`: PRD, target users, positioning).
+- `design-principles.md` — the guiding design philosophy: principles, do/don't, and **what wins** when they conflict.
+- `design-system.md` — the project's **actual** visual language, **not a fixed template**: the **Approach** (how
+  styling is done here — **detected from the code** if it exists: Tailwind / CSS Modules / styled-components / vanilla
+  CSS / a design language; **decided with you** if greenfield — never dictate Tailwind by default), **How To Use**,
+  **Rules** (component reuse, states: hover/focus/disabled, variants, do/don't — **captured, not prescribed**), and an
+  **index** pointing to the granular docs below.
+- `tokens.md` — color / typography / spacing / radius / elevation / motion tokens in **one fenced `text` block**
+  (formatter-proof: never reflowed by Prettier). This is the single source of truth every surface and every line of UI
+  code pulls from.
 - `messaging.md` — the **copy** source of truth: voice + a reusable copy library (taglines, value props, section /
   CTA / FAQ copy), grounded in the product.
 - `components.md` — inventory of components with their variants and states (as they exist or are planned).
+- `docs/design/README.md` — the folder index (regenerated), listing every design doc by tier.
 
-Create only what applies: a **non-UI** project (CLI, library, backend) gets brand + logo + messaging (and a light or
-no design-system), skipping web/components.
+**Standard** (real UI / deployment) — the granular expansions, each grounded in `tokens.md`, never off-token:
+`typography.md`, `color.md`, `spacing-layout.md`, `iconography.md`, `imagery.md`, `motion.md`, `accessibility.md`
+(contrast/focus/keyboard/reduced-motion/ARIA), `content-style-guide.md`, `ux-flows.md` (IA + key flows + empty/
+loading/error states), and `references.md` (reference sites/images + **what to borrow — layout/feel only, not their
+tokens/copy** — plus a moodboard and anti-references).
+
+**Full** (large / long-lived):
+- `docs/design/decisions/NNNN-*.md` — **Design Decision Records (DDR)**, the design parallel of ADRs: why this
+  palette / typeface / spacing scale / motion character was chosen, alternatives, why-not, long-term impact. Per-item
+  and immutable except Status; maintain `docs/design/decisions/README.md` as the index. Template: `templates/DDR.md.tmpl`.
+- `design-qa-checklist.md` — pre-ship visual / interaction / responsive / accessibility / cross-surface checks.
+
+Create only what applies: a **non-UI** project (CLI, library, backend) gets **brand + design-principles + messaging**
+(and a light or no design-system/tokens), skipping the visual/UI docs and components.
 
 ## Flow
 
@@ -39,19 +60,26 @@ no design-system), skipping web/components.
 2. **Ask only what's missing** (≤4 via `AskUserQuestion`): mood/character, **reference sites or images to resemble**,
    brand decisions the docs don't cover. Recommend from the detected project type; the user confirms. (No separate
    design-brief — the intake is these few questions plus the product docs.)
-3. **Write `docs/design/`** — detected values as-is, decided values from the answers, unknown → `TBD` (never
-   fabricate a hex or font you weren't given or didn't confirm).
+3. **Write `docs/design/`** at the chosen tier — detected values as-is, decided values from the answers, unknown →
+   `TBD` (never fabricate a hex or font you weren't given or didn't confirm). Every granular doc pulls from
+   `tokens.md`; nothing off-token. When `full` is selected, seed `docs/design/decisions/` with a DDR for each
+   significant choice made here (palette / typeface / spacing character), and its `README.md` index. Regenerate
+   `docs/design/README.md`.
 4. **Generate on request** (a mode): `brand` board · `web` (landing / pages) · `logo` · `deck` · `ads` · `og-image`.
-   Produce a **real Artifact** (HTML / SVG) that uses the `design-system` tokens + rules and the `messaging` copy —
-   not lorem-ipsum, not off-brand. Save the spec to `docs/design/<surface>.md`; the live preview is the Artifact.
-5. **Wire the brain.** Add/refresh a **Design system** pointer in `CLAUDE.md` (→ `docs/design/design-system.md` +
-   tokens), so when you or Claude write **code** it follows the project's visual language (use the tokens, reuse the
-   components, keep the styling approach). Refresh `docs/README.md` + the registry.
+   Produce a **real Artifact** (HTML / SVG) that uses the `tokens.md` values + `design-system` rules and the
+   `messaging` copy — not lorem-ipsum, not off-brand. Save the spec to `docs/design/<surface>.md`; the live preview is
+   the Artifact.
+5. **Wire the brain.** Refresh the **`{{DESIGN_LINKS}}`** ("Design & brand") block in `CLAUDE.md` (marker-scoped) →
+   `design-principles.md`, `design-system.md`, `tokens.md`, `messaging.md` — so when you or Claude write **code** it
+   follows the project's visual language (use the tokens, reuse the components, keep the styling approach). Refresh
+   `docs/README.md` + the registry.
 
 ## Rules
 
-- **Consistency is the whole point.** Everything — generated design and code guidance — flows from
-  `design-system.md` + `messaging.md`. No rogue colors / fonts / spacing outside the tokens.
+- **Consistency is the whole point.** Everything — generated design, the granular docs, and code guidance — flows
+  from `tokens.md` + `design-system.md` + `messaging.md`. No rogue colors / fonts / spacing outside the tokens.
+- **Record the why.** For a significant, hard-to-reverse choice, capture the value in the granular doc and the
+  reasoning in a **DDR** (full tier) — mirrors how code decisions become ADRs.
 - **Detect, don't dictate.** The design-system mirrors the project's real conventions; it never forces a stack.
 - Never fabricate a brand asset, hex, or font the user didn't give or approve → `TBD`.
 - Never overwrite existing design docs/code without consent. Anti-bloat: in-place, consolidated, no versioned files.

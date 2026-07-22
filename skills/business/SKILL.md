@@ -36,7 +36,7 @@ Generate content in the project's documentation language (registry `language:`, 
    market data or a margin**; unknown input → ask, or leave `TBD`.
 4. **Persist**: update the relevant `docs/business/*` in place, and record a significant pricing/model change as a
    short decision entry (an ADR under `docs/architecture/adr/` if the project has ADRs, else a dated line in `pricing.md`).
-5. **Wire the brain**: add/refresh a "Business" pointer in `CLAUDE.md` and the docs index.
+5. **Wire the brain**: refresh the **`{{BUSINESS_LINKS}}`** ("Business & pricing") block in `CLAUDE.md` (marker-scoped) → `business-model.md`, `pricing.md`, `unit-economics.md` — and the docs index.
 
 ## Rules
 - **Iterative, not one-shot.** Re-running is normal; it reasons from the current numbers and keeps them honest.

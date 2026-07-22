@@ -1,12 +1,15 @@
-# Documentation
+# {{INDEX_TITLE}}
 
-Engineering docs for **{{PROJECT_NAME}}**, maintained by the [acta](https://) skill pipeline.
-This index is **regenerated** on every `/acta:build` and `/acta:track` — do not hand-curate the list.
+{{INDEX_SUBTITLE}}
+This index is **regenerated** by the acta skills — do not hand-curate the list.
 
-{{SECTIONS_BY_DISCIPLINE}}
-<!-- For each discipline that has docs, render:
-## <Discipline>
+{{SECTIONS}}
+<!-- Render one group per non-empty section, each item a linked doc with a one-line purpose:
+## <Group>
 - [<Human Title>](relative/path.md) — <one-line purpose>
+Grouping is caller-defined:
+  - docs/README.md      → INDEX_TITLE "Documentation", group by DISCIPLINE (Product, Project, Code, …).
+  - docs/design/README.md → INDEX_TITLE "Design", group by TIER (Core, Standard, Full) + a Surfaces group if any.
 -->
 
 ---

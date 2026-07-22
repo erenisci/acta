@@ -22,6 +22,9 @@ Engineering docs live under `docs/`. **Before working in an area, read its doc.*
 - **Quality & testing** → {{QUALITY_LINKS}}
 - **Ops & security** → {{OPS_LINKS}}
 - **AI-assisted development** → {{AI_LINKS}}
+- **Design & brand** → {{DESIGN_LINKS}} <!-- emit only if docs/design/ exists -->
+- **Business & pricing** → {{BUSINESS_LINKS}} <!-- emit only if docs/business/ exists -->
+- **Legal & compliance** → {{LEGAL_LINKS}} <!-- emit only if docs/legal/ exists -->
 
 Full index: `docs/README.md`.
 <!-- acta:index:end -->
@@ -29,4 +32,8 @@ Full index: `docs/README.md`.
 <!-- RENDER RULES:
      - Emit ONLY the disciplines that have at least one generated doc; drop empty bullets.
      - Each {{X_LINKS}} = comma-separated `name (relative/path.md)` for that discipline's key docs (cap ~5; link the index for the rest).
+     - The three skill-owned bullets are emitted ONLY if their folder exists (drop otherwise); each points to that layer's key docs:
+       - {{DESIGN_LINKS}} (docs/design/): design-principles, design-system, tokens, messaging. Before writing UI code, read these and stay on-token.
+       - {{BUSINESS_LINKS}} (docs/business/): business-model, pricing, unit-economics. Read before touching pricing/monetization; keep it in `/acta:business`.
+       - {{LEGAL_LINKS}} (docs/legal/): overview, privacy, compliance-checklist. Briefings only — never binding legal text; a lawyer finalizes.
      - This whole block is regenerated between the markers; never duplicate it. If CLAUDE.md lacks the markers, append the block once. -->

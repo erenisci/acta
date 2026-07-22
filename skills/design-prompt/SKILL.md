@@ -10,23 +10,27 @@ content/copy** to fill them. Claude Design is great at visuals but weak at conte
 skill fixes both: the prompt carries the **exact spec** and a hard **scope lock**, and the **real copy** from
 `messaging.md`, so Claude Design builds *your* thing, not a generic guess.
 
-Shared: `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`. Reads `docs/design/*` and, for web, `docs/product/*` (feature-specs, requirements).
+Shared: `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`. Reads `docs/design/*` (the granular doc-base) and, for web,
+`docs/product/*` (feature-specs, requirements).
 
 ## Language
 Write copy and docs in the project's documentation language (registry `language:`, default English); talk to the user in the language they use. See `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
 
 ## Pre-condition
-`docs/design/design-system.md` + `messaging.md` must exist. If not → run `/acta:design` first (it establishes them).
+`docs/design/tokens.md` (or `design-system.md`) + `messaging.md` must exist. If not → run `/acta:design` first (it
+establishes the doc-base).
 
 ## Flow
 
 1. **Pick the surface** — arg or ask: `web` (landing / a specific page) · `logo` · `brand` board · `deck` · `ads` · `og-image`.
 2. **Gather grounding** (all from the docs, nothing invented):
-   - visual: tokens, approach, rules from `design-system.md`; mood/voice from `brand.md`.
-   - copy: the real headlines, value props, section/CTA/FAQ text from `messaging.md`.
-   - for `web`: the **actual** screens, sections, and **fields/features** from `docs/product/feature-specs.md` /
-     `requirements-*` / PRD — so the prompt describes what really exists.
-   - optional: a **reference** site/image the user wants to resemble.
+   - visual: tokens from `tokens.md`; approach + rules from `design-system.md`; type from `typography.md`; palette/
+     state colors from `color.md`; grid/breakpoints from `spacing-layout.md`; motion from `motion.md`; a11y from
+     `accessibility.md`; mood/voice from `brand.md`.
+   - copy: the real headlines, value props, section/CTA/FAQ text from `messaging.md` (+ `content-style-guide.md` for tone).
+   - for `web`: the **actual** screens/flows from `ux-flows.md` and the sections/**fields/features** from
+     `docs/product/feature-specs.md` / `requirements-*` / PRD — so the prompt describes what really exists.
+   - a **reference** site/image: from `references.md` if recorded (with **what to borrow — layout/feel only**), else ask.
 3. **Build the prompt block** (fenced, copy-able) with these parts:
    - **Brand & visuals** — tokens (colors/type/spacing), mood, radius/elevation, motion.
    - **Structure & content** — the real sections/screens, and the **real copy** inline (no lorem-ipsum, no placeholders).

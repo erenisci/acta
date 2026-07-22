@@ -56,7 +56,8 @@ a small app or a blog. **Complexity must be justified by a real requirement — 
 
 ## Decide, don't just do — justify every significant decision
 
-For each significant technical decision, answer (and record as an **ADR**):
+For each significant technical decision, answer (and record as an **ADR** — or, for a significant **design** decision
+when the project has a design layer, a **DDR** under `docs/design/decisions/`):
 
 - Why this decision?
 - What were the alternatives?
@@ -75,7 +76,7 @@ every change was made. Optimize for **decisions, not keystrokes.**
 - Documentation is the source of truth; **read the relevant doc before you write.**
 - **Unknown stays `TBD`** — never fabricate.
 - Docs **evolve with the code** (keep them in sync; don't let them rot).
-- Every decision is **traceable** (ADR).
+- Every decision is **traceable** (ADR for engineering; DDR for design).
 - **Right-size for a solo builder**, not a 50-person company.
 - **Never read secrets.** Derive env docs only from the committed, secret-less template (`.env.example` / `.env.sample`)
   — never open a real `.env`, `.env.local`, credential, or key file. Record variable **names and purpose, never values.**

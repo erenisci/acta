@@ -55,9 +55,19 @@ Generate content in the project's documentation language (registry `language:`, 
      status `external` so future `acta:track` knows they exist but weren't authored here.
    - `docs/README.md`: if absent, generate it; if present, **skip** (report it).
 
-7. **Summary.** Two clear lists:
+7. **Backfill the skill-owned layers (detect → offer, don't force).** The catalog disciplines above don't cover
+   `docs/design/`, `docs/business/`, `docs/legal/` — those are owned by their own skills. Scan for their signals and,
+   if found and the layer is missing, **offer to run the skill** (each reads the same code, so nothing is re-derived):
+   - **design** — a styling system in the code (Tailwind config, CSS variables/tokens, a component library, theme
+     files) → suggest `/acta:design` to reverse-engineer `tokens.md` + `components.md` + the design-system from it.
+   - **business** — pricing/plans/billing in code or config (a Stripe catalog, a `plans` table) → suggest `/acta:business`.
+   - **legal** — data collection, cookies/analytics, third-party vendors/sub-processors → suggest `/acta:legal`.
+   Offer only; adopt itself never writes these layers (they're conversational and skill-owned).
+
+8. **Summary.** Two clear lists:
    - **Created** (missing docs now generated).
    - **Left untouched** (pre-existing docs — path each), explicitly: *"already present, not modified."*
+   - **Suggested layers** (any skill-owned layer detected but not generated — name the skill to run).
 
 ## Rules (the defining guarantee)
 
