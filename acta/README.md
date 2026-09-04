@@ -16,6 +16,7 @@ methodology to a project — and, crucially, wires every produced document into 
 | acta:track | `/acta:track` | after finishing a chunk of work | Update all relevant docs to the current state (incl. the **design** + **legal** layers when present) — **without bloating them**. |
 | acta:adopt | `/acta:adopt` | existing codebase, missing docs | Generate only the **missing** docs from the code; **never overwrite** existing docs. |
 | acta:audit | `/acta:audit` | anytime | **Verify** the memory: doc↔code drift, broken links, stale TBDs, brain/index consistency. Read-only; reports findings. |
+| acta:preview | `/acta:preview` | after a UI change / before a commit | **Show** the running app in chat: one screenshot per viewport (from the project's real breakpoints). Ephemeral, read-only. |
 | acta:design | `/acta:design` | brand / design | Establish a **tiered senior-designer doc-base** in `docs/design/` (brand, design-principles, design-system, tokens, messaging, components + standard/full docs & DDR decision records) and **generate real design** (web / logo / deck / ads). |
 | acta:design-prompt | `/acta:design-prompt` | need a Claude Design prompt | Scope-locked, on-brand **Claude Design prompts + the real copy**, straight from the design docs. |
 | acta:business | `/acta:business` | pricing / money | Iterative modeling: pricing, unit economics, best/base/worst projections in `docs/business/`. |

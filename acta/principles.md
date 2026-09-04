@@ -23,6 +23,7 @@ actually changed:
 - Shipped a feature / finished a chunk → `/acta:track` — it syncs the engineering docs **and** the design & legal
   layers when they exist: ticks the roadmap, adds a changelog entry, updates the design-system if UI changed, and
   **raises a lawyer re-review flag** if a change (new cookie, vendor, data field, market) shifted legal exposure.
+- Changed the UI → `/acta:preview` — see the running app at each viewport before calling it done.
 - Touched pricing / cost / monetization → `/acta:business`.
 - **Finished a phase / milestone in a git repo (has a remote)** → after the docs are synced, suggest **committing the
   phase** (a focused commit with a clear message) so history advances phase by phase alongside the docs. **Propose,

@@ -85,3 +85,4 @@ Create only what applies: a **non-UI** project (CLI, library, backend) gets **br
 - Never overwrite existing design docs/code without consent. Anti-bloat: in-place, consolidated, no versioned files.
 - Domain-agnostic. Content in the project's documentation language. Operate by `${CLAUDE_PLUGIN_ROOT}/acta/principles.md`.
 - Turn the docs into Claude Design prompts with `/acta:design-prompt`; keep them in sync with `/acta:track`.
+- See the result in the real app with `/acta:preview` — a screenshot per viewport, checked against these docs.

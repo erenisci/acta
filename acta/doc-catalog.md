@@ -238,6 +238,7 @@ ux-flows           | docs/design/ux-flows.md              | standard | in-place 
 references         | docs/design/references.md            | standard | in-place   | _doc-format      | Reference Sites/Images; What To Borrow (layout/feel only); Moodboard; Anti-references
 ddr                | docs/design/decisions/NNNN-*.md      | full     | per-item   | templates/DDR.md.tmpl | Status; Context; Decision; Consequences (also maintain docs/design/decisions/README.md index)
 design-qa          | docs/design/design-qa-checklist.md   | full     | in-place   | _doc-format      | Visual QA; Interaction QA; Responsive; Accessibility; Cross-surface Consistency
+design-previews    | docs/design/previews/*.png           | full     | overwrite  | (binary assets)  | Viewport screenshots written only by `acta:preview --save`; stable names, no timestamps, never a growing gallery
 design-index       | docs/design/README.md                | core     | regenerate | templates/docs-README.md.tmpl | Index of all design docs by tier
 # Surfaces (generated on request; the live preview is a real Artifact, spec saved here):
 surface-web        | docs/design/web.md                   | full     | in-place   | _doc-format      | Sections/Screens; Content; Layout; States (spec for the generated web Artifact)

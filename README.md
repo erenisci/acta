@@ -56,13 +56,14 @@ flowchart LR
     G -->|"backfill missing docs"| D
 ```
 
-| Skill             | When                   | What it does                                                     |
-| ----------------- | ---------------------- | ---------------------------------------------------------------- |
-| **`/acta:init`**  | project start          | Creates a short intake you fill with a simple sign language.     |
-| **`/acta:build`** | after the brief        | Detects the project type → fitting docs + the `CLAUDE.md` brain. |
-| **`/acta:track`** | after finishing work   | Brings **all** relevant docs to the current state — no bloat.    |
-| **`/acta:adopt`** | existing code, no docs | Backfills only the **missing** docs. **Never overwrites.**       |
-| **`/acta:audit`** | anytime                | Read-only check that the docs still match the code.              |
+| Skill               | When                   | What it does                                                     |
+| ------------------- | ---------------------- | ---------------------------------------------------------------- |
+| **`/acta:init`**    | project start          | Creates a short intake you fill with a simple sign language.     |
+| **`/acta:build`**   | after the brief        | Detects the project type → fitting docs + the `CLAUDE.md` brain. |
+| **`/acta:track`**   | after finishing work   | Brings **all** relevant docs to the current state — no bloat.    |
+| **`/acta:adopt`**   | existing code, no docs | Backfills only the **missing** docs. **Never overwrites.**       |
+| **`/acta:audit`**   | anytime                | Read-only check that the docs still match the code.              |
+| **`/acta:preview`** | after a UI change      | **Shows** the running app in chat — a screenshot per viewport.   |
 
 ---
 

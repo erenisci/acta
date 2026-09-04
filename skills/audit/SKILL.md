@@ -39,7 +39,7 @@ Run these read-only checks and collect findings. Rank each **🔴 broken · 🟡
 6. **Conventions** — filename casing (root meta UPPERCASE, `docs/**` lowercase kebab-case); docs living outside the
    catalog's paths; disciplines/packs in the registry vs what's actually on disk. **Do not flag** the skill-owned
    areas `docs/design/`, `docs/business/`, `docs/legal/` as orphans — they are valid (see the catalog's "Skill-owned
-   areas" note).
+   areas" note); `docs/design/previews/` holds `acta:preview --save` screenshots (assets, not docs) — valid too.
 7. **Anti-bloat** — `in-place` docs that have grown append-only (e.g. `PROGRESS.md` accumulating dated log lines
    instead of a snapshot); oversized docs that should be consolidated per their growth policy.
 8. **Design consistency** (only if `docs/design/` exists) — the code's real styling vs the design doc-base:
