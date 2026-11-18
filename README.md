@@ -133,7 +133,10 @@ Three optional layers ship your product off the **same** source of truth:
 A **tiered senior-designer doc-base**: brand, design-principles, design-system, `tokens.md`, messaging, components —
 and, deeper, typography/color/spacing/motion/accessibility plus **DDR** design-decision records. From it, real
 generated design (landing, logo, deck, ads) and scope-locked [Claude Design](https://claude.ai/design) prompts. Wired
-into the brain so Claude follows your tokens; `/acta:track` keeps it in sync.
+into the brain so Claude follows your tokens; `/acta:track` keeps it in sync. UI projects also get a root
+**`DESIGN.md`** in Google's open [DESIGN.md format](https://github.com/google-labs-code/design.md), derived from
+`tokens.md`, so other agents and design tools (Stitch, impeccable, Cursor) apply the same identity; `/acta:audit`
+checks it against the tokens and the spec.
 
 💰 **Business** — `/acta:business`
 An **iterative** modeling partner (not a one-shot): pricing, unit economics (LTV / CAC / margin), and

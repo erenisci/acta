@@ -240,6 +240,7 @@ ddr                | docs/design/decisions/NNNN-*.md      | full     | per-item 
 design-qa          | docs/design/design-qa-checklist.md   | full     | in-place   | _doc-format      | Visual QA; Interaction QA; Responsive; Accessibility; Cross-surface Consistency
 design-previews    | docs/design/previews/*.png           | full     | overwrite  | (binary assets)  | Viewport screenshots written only by `acta:preview --save`; stable names, no timestamps, never a growing gallery
 design-index       | docs/design/README.md                | core     | regenerate | templates/docs-README.md.tmpl | Index of all design docs by tier
+design-md          | DESIGN.md                            | core     | regenerate | acta/design-md.md | Front-matter tokens (colors/typography/rounded/spacing/components); Overview; Colors; Typography; Layout; Elevation & Depth; Shapes; Components; Do's and Don'ts; Motion — UI projects only, derived from tokens.md
 # Surfaces (generated on request; the live preview is a real Artifact, spec saved here):
 surface-web        | docs/design/web.md                   | full     | in-place   | _doc-format      | Sections/Screens; Content; Layout; States (spec for the generated web Artifact)
 surface-logo       | docs/design/logo.md                  | full     | in-place   | _doc-format      | Concept; Variants (mark/wordmark); Clearspace; Sizing; Color (spec for the generated logo Artifact)

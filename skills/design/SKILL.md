@@ -37,6 +37,10 @@ UI/deployment, full when the project is large/long-lived.
   CTA / FAQ copy), grounded in the product.
 - `components.md` — inventory of components with their variants and states (as they exist or are planned).
 - `docs/design/README.md` — the folder index (regenerated), listing every design doc by tier.
+- **`DESIGN.md`** (project root, UI projects only) — the agent-readable export of the above in Google's open
+  DESIGN.md format: tokens as YAML front matter + rationale in the canonical sections, so other agents and design
+  tools (Stitch, impeccable, Cursor…) apply the same identity. **Derived from `tokens.md`, never the source.**
+  Contract — mapping, foreign-file handling, linting: `${CLAUDE_PLUGIN_ROOT}/acta/design-md.md`.
 
 **Standard** (real UI / deployment) — the granular expansions, each grounded in `tokens.md`, never off-token:
 `typography.md`, `color.md`, `spacing-layout.md`, `iconography.md`, `imagery.md`, `motion.md`, `accessibility.md`
@@ -65,19 +69,25 @@ Create only what applies: a **non-UI** project (CLI, library, backend) gets **br
    `tokens.md`; nothing off-token. When `full` is selected, seed `docs/design/decisions/` with a DDR for each
    significant choice made here (palette / typeface / spacing character), and its `README.md` index. Regenerate
    `docs/design/README.md`.
+   - **Already a `DESIGN.md` at the root?** Read it in step 1 as another source. If it has no Acta marker it is
+     foreign — offer import / regenerate / leave it, per `design-md.md`; never overwrite silently. An import pulls
+     its tokens into `tokens.md` (and the granular docs) as **detected** values.
+3b. **Write `DESIGN.md`** (UI projects) from the docs just written, per `${CLAUDE_PLUGIN_ROOT}/acta/design-md.md`,
+   with the Acta marker. Lint it if the linter is installed; report 🔴/🟡 findings and any hex approximations.
 4. **Generate on request** (a mode): `brand` board · `web` (landing / pages) · `logo` · `deck` · `ads` · `og-image`.
    Produce a **real Artifact** (HTML / SVG) that uses the `tokens.md` values + `design-system` rules and the
    `messaging` copy — not lorem-ipsum, not off-brand. Save the spec to `docs/design/<surface>.md`; the live preview is
    the Artifact.
 5. **Wire the brain.** Refresh the **`{{DESIGN_LINKS}}`** ("Design & brand") block in `CLAUDE.md` (marker-scoped) →
-   `design-principles.md`, `design-system.md`, `tokens.md`, `messaging.md` — so when you or Claude write **code** it
+   `design-principles.md`, `design-system.md`, `tokens.md`, `messaging.md` (+ `DESIGN.md` when written) — so when you or Claude write **code** it
    follows the project's visual language (use the tokens, reuse the components, keep the styling approach). Refresh
    `docs/README.md` + the registry.
 
 ## Rules
 
-- **Consistency is the whole point.** Everything — generated design, the granular docs, and code guidance — flows
-  from `tokens.md` + `design-system.md` + `messaging.md`. No rogue colors / fonts / spacing outside the tokens.
+- **Consistency is the whole point.** Everything — generated design, the granular docs, `DESIGN.md`, and code
+  guidance — flows from `tokens.md` + `design-system.md` + `messaging.md`. No rogue colors / fonts / spacing outside
+  the tokens.
 - **Record the why.** For a significant, hard-to-reverse choice, capture the value in the granular doc and the
   reasoning in a **DDR** (full tier) — mirrors how code decisions become ADRs.
 - **Detect, don't dictate.** The design-system mirrors the project's real conventions; it never forces a stack.

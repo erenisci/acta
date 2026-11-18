@@ -62,6 +62,10 @@ Read `.claude/acta.md` (the registry). If absent, this project isn't set up with
    - new recurring **copy** → `messaging.md` (tone/terminology → `content-style-guide.md`). **Remove entries no longer in the code.**
    - a real, hard-to-reverse **design decision** (new palette / typeface / spacing character) → new **DDR**
      (`docs/design/decisions/NNNN-*.md`, per-item) + its index, if the project uses the full tier.
+   - **`DESIGN.md`** (if present) — per `${CLAUDE_PLUGIN_ROOT}/acta/design-md.md`. Acta-marked: regenerate it from
+     the updated docs whenever a token, component variant or principle changed. If it was **edited since** (another
+     tool, e.g. impeccable, or by hand) and now disagrees with `tokens.md`, don't pick a side: show the differing
+     tokens and ask which wins, then update the loser. Foreign (no marker): leave it alone and report the drift.
    - Refresh `docs/design/README.md` and the **`{{DESIGN_LINKS}}`** block in the brain.
 
 6. **Legal sync** — only if `docs/legal/` exists (skip otherwise). Scan for **legal-relevant** changes and update the

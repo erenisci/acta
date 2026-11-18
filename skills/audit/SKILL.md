@@ -50,6 +50,12 @@ Run these read-only checks and collect findings. Rank each **🔴 broken · 🟡
      to a superseding DDR that doesn't exist.
    - a broken or missing **`{{DESIGN_LINKS}}`** block in the brain (design docs exist but the "Design & brand" bullet
      is absent or its links don't resolve).
+   - **`DESIGN.md`** (if present; contract in `${CLAUDE_PLUGIN_ROOT}/acta/design-md.md`): front-matter tokens that
+     disagree with `tokens.md` (🟡, either direction); spec breaks by hand — sections out of the canonical order,
+     a duplicate section heading (🔴), a component prop outside the allowed 8, a `{token.ref}` that resolves to
+     nothing (🔴). If the `design.md` linter is **already installed**, run `design.md lint DESIGN.md` and map its
+     findings (error → 🔴, warning → 🟡); never `npx` it into the project. A UI project with design docs but no
+     `DESIGN.md` → 🔵 (offer `/acta:design` to write it).
    Flag them → the fixer is `/acta:track` (design sync).
 9. **Business consistency** (only if `docs/business/` exists) — a price / plan / tier in the code or config (e.g. a
    Stripe price, a plans table) that disagrees with `pricing.md`; a monetization model in code not reflected in
